@@ -1,12 +1,15 @@
 import { useState, type FormEvent } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
+import { useLanguage } from '../i18n/context'
 
 const WA_NUMBER = import.meta.env.VITE_WA_NUMBER as string
 const WA_MESSAGE = encodeURIComponent(import.meta.env.VITE_WA_MESSAGE as string)
+const FORMSPREE_ID = import.meta.env.VITE_FORMSPREE_ID as string
 
 type FormState = 'idle' | 'submitting' | 'success' | 'error'
 
 export default function Contact() {
+  const { t, dir } = useLanguage()
   const [name, setName] = useState('')
   const [email, setEmail] = useState('')
   const [message, setMessage] = useState('')
@@ -19,9 +22,9 @@ export default function Contact() {
     setErrorMsg('')
 
     try {
-      const res = await fetch('/api/leads', {
+      const res = await fetch(`https://formspree.io/f/${FORMSPREE_ID}`, {
         method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
+        headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
         body: JSON.stringify({ name, email, message }),
       })
 
@@ -29,9 +32,12 @@ export default function Contact() {
       setState('success')
     } catch {
       setState('error')
-      setErrorMsg('Something went wrong. Try reaching us on WhatsApp instead.')
+      setErrorMsg(t.contact.error)
     }
   }
+
+  const xLeft = dir === 'rtl' ? 24 : -24
+  const xRight = dir === 'rtl' ? -24 : 24
 
   return (
     <section id="contact" className="section-padding relative">
@@ -49,7 +55,7 @@ export default function Contact() {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-16 items-start">
           {/* Left — copy */}
           <motion.div
-            initial={{ opacity: 0, x: -24 }}
+            initial={{ opacity: 0, x: xLeft }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: false, margin: '-80px' }}
             transition={{ duration: 0.55, ease: [0.16, 1, 0.3, 1] }}
@@ -59,13 +65,13 @@ export default function Contact() {
               className="tag"
               style={{ fontFamily: 'var(--font-mono)', alignSelf: 'flex-start' }}
             >
-              03 / Contact
+              {t.contact.tag}
             </span>
             <h2
               className="text-3xl md:text-5xl font-bold"
               style={{ fontFamily: 'var(--font-display)', color: 'var(--white)' }}
             >
-              Ready to build<br />
+              {t.contact.heading1}<br />
               <span
                 style={{
                   backgroundImage: 'linear-gradient(135deg, #a855f7, #06b6d4)',
@@ -74,11 +80,11 @@ export default function Contact() {
                   color: 'transparent',
                 }}
               >
-                something real?
+                {t.contact.heading2}
               </span>
             </h2>
             <p className="text-base leading-relaxed" style={{ color: 'var(--muted)', fontWeight: 300, maxWidth: '420px' }}>
-              Tell us what you're working on. We'll respond within 24 hours with a straight answer — no fluff, no sales pitch.
+              {t.contact.subline}
             </p>
 
             {/* Alternative contact */}
@@ -87,7 +93,7 @@ export default function Contact() {
                 className="text-xs uppercase tracking-widest"
                 style={{ fontFamily: 'var(--font-mono)', color: 'rgba(255,255,255,0.25)' }}
               >
-                Or chat directly
+                {t.contact.chatLabel}
               </p>
               <a
                 href={`https://wa.me/${WA_NUMBER}?text=${WA_MESSAGE}`}
@@ -110,7 +116,7 @@ export default function Contact() {
               >
                 <WhatsAppIcon />
                 <span className="text-sm font-medium" style={{ fontFamily: 'var(--font-body)' }}>
-                  WhatsApp Us
+                  {t.contact.wa}
                 </span>
                 <span className="text-xs ml-auto opacity-50 group-hover:opacity-80 transition-opacity" style={{ fontFamily: 'var(--font-mono)' }}>
                   →
@@ -121,7 +127,7 @@ export default function Contact() {
 
           {/* Right — form */}
           <motion.div
-            initial={{ opacity: 0, x: 24 }}
+            initial={{ opacity: 0, x: xRight }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: false, margin: '-80px' }}
             transition={{ duration: 0.55, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
@@ -146,10 +152,10 @@ export default function Contact() {
                     className="text-xl font-bold"
                     style={{ fontFamily: 'var(--font-display)', color: 'var(--white)' }}
                   >
-                    Message received
+                    {t.contact.successTitle}
                   </h3>
                   <p className="text-sm" style={{ color: 'var(--muted)', fontWeight: 300 }}>
-                    We'll be in touch within 24 hours. Looking forward to it.
+                    {t.contact.successSub}
                   </p>
                 </motion.div>
               ) : (
@@ -163,28 +169,28 @@ export default function Contact() {
                 >
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                     <Field
-                      label="Name"
+                      label={t.contact.fields.name}
                       type="text"
                       value={name}
                       onChange={setName}
-                      placeholder="Your name"
+                      placeholder={t.contact.fields.namePlaceholder}
                       required
                     />
                     <Field
-                      label="Email"
+                      label={t.contact.fields.email}
                       type="email"
                       value={email}
                       onChange={setEmail}
-                      placeholder="your@email.com"
+                      placeholder={t.contact.fields.emailPlaceholder}
                       required
                     />
                   </div>
                   <Field
-                    label="What are you building?"
+                    label={t.contact.fields.message}
                     type="textarea"
                     value={message}
                     onChange={setMessage}
-                    placeholder="Describe your project or idea..."
+                    placeholder={t.contact.fields.messagePlaceholder}
                     required
                   />
 
@@ -219,10 +225,10 @@ export default function Contact() {
                   >
                     {state === 'submitting' ? (
                       <span className="flex items-center justify-center gap-2">
-                        <Spinner /> Sending...
+                        <Spinner /> {t.contact.sending}
                       </span>
                     ) : (
-                      'Send Message →'
+                      `${t.contact.send} ${t.arrow}`
                     )}
                   </button>
                 </motion.form>
