@@ -1,4 +1,6 @@
 import { motion } from 'framer-motion'
+import { type ReactElement } from 'react'
+import { useLanguage } from '../i18n/context'
 
 /* ── Icons (declared first so they can be used in the services array) ── */
 
@@ -88,42 +90,7 @@ function AnythingIcon() {
   )
 }
 
-/* ── Data ── */
-
-const services = [
-  {
-    icon: <AutomationIcon />,
-    label: 'Custom Automations',
-    description:
-      'End-to-end workflow automation that eliminates the manual. Zapier-level power with none of the limits, built specifically for your processes.',
-    accent: 'purple',
-    tags: ['n8n', 'Zapier', 'Make', 'Custom'],
-  },
-  {
-    icon: <AgentIcon />,
-    label: 'AI Agent Development',
-    description:
-      'Intelligent agents that reason, decide, and act. From customer-facing chatbots to internal ops agents that handle complex multi-step workflows.',
-    accent: 'cyan',
-    tags: ['OpenAI', 'LangChain', 'RAG', 'MCP'],
-  },
-  {
-    icon: <SoftwareIcon />,
-    label: 'Custom Software',
-    description:
-      'Full-stack applications built to your exact spec. Dashboards, internal tools, SaaS products, integrations - clean code, production-grade.',
-    accent: 'purple',
-    tags: ['React', 'FastAPI', 'TypeScript', 'Docker'],
-  },
-  {
-    icon: <AnythingIcon />,
-    label: 'Anything You Can Dream',
-    description:
-      'If it can be built with software, we can build it. Bring your wildest idea and we will architect and ship it with the same precision as everything else.',
-    accent: 'cyan',
-    tags: ['Monday.com', 'Twilio', 'APIs', 'You Name It'],
-  },
-]
+/* ── Animation config ── */
 
 const cardVariants = {
   hidden: { opacity: 0, y: 32 },
@@ -135,6 +102,21 @@ const cardVariants = {
 }
 
 export default function Services() {
+  const { t } = useLanguage()
+
+  const servicesMeta = [
+    { icon: <AutomationIcon />, accent: 'purple' as const, tags: ['n8n', 'Zapier', 'Make', 'Custom'] },
+    { icon: <AgentIcon />,      accent: 'cyan' as const,   tags: ['OpenAI', 'LangChain', 'RAG', 'MCP'] },
+    { icon: <SoftwareIcon />,   accent: 'purple' as const, tags: ['React', 'FastAPI', 'TypeScript', 'Docker'] },
+    { icon: <AnythingIcon />,   accent: 'cyan' as const,   tags: ['Monday.com', 'Twilio', 'APIs', 'You Name It'] },
+  ]
+
+  const services = t.services.items.map((item, i) => ({
+    ...servicesMeta[i],
+    label: item.label,
+    description: item.description,
+  }))
+
   return (
     <section id="services" className="section-padding relative">
       {/* Subtle divider glow */}
@@ -157,23 +139,23 @@ export default function Services() {
             className="tag"
             style={{ fontFamily: 'var(--font-mono)' }}
           >
-            01 / Services
+            {t.services.tag}
           </span>
           <h2
             className="text-3xl md:text-5xl font-bold"
             style={{ fontFamily: 'var(--font-display)', color: 'var(--white)' }}
           >
-            What We Build
+            {t.services.heading}
           </h2>
           <p className="max-w-lg text-base" style={{ color: 'var(--muted)', fontWeight: 300 }}>
-            We don't do cookie-cutter. Every engagement starts with understanding your problem and ends with a solution that actually works.
+            {t.services.subline}
           </p>
         </motion.div>
 
         {/* Cards grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
           {services.map((s, i) => (
-            <ServiceCard key={s.label} service={s} index={i} />
+            <ServiceCard key={i} service={s} index={i} />
           ))}
         </div>
       </div>
@@ -181,7 +163,13 @@ export default function Services() {
   )
 }
 
-type ServiceItem = typeof services[0]
+type ServiceItem = {
+  icon: ReactElement
+  accent: 'purple' | 'cyan'
+  tags: string[]
+  label: string
+  description: string
+}
 
 function ServiceCard({ service, index }: { service: ServiceItem; index: number }) {
   const isPurple = service.accent === 'purple'
