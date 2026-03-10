@@ -1,10 +1,12 @@
 import { useEffect, useState } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
+import { useLanguage } from '../i18n/context'
 
 const WA_NUMBER = import.meta.env.VITE_WA_NUMBER as string
 const WA_MESSAGE = encodeURIComponent(import.meta.env.VITE_WA_MESSAGE as string)
 
 export default function FloatingButtons() {
+  const { t } = useLanguage()
   const [visible, setVisible] = useState(false)
 
   useEffect(() => {
@@ -31,7 +33,7 @@ export default function FloatingButtons() {
               exit={{ opacity: 0, y: 16, scale: 0.85 }}
               transition={{ duration: 0.25, ease: [0.16, 1, 0.3, 1] }}
               onClick={scrollToTop}
-              aria-label="Back to top"
+              aria-label={t.floating.backToTop}
               className="w-8 h-8 sm:w-10 sm:h-10 rounded-full flex items-center justify-center transition-all duration-300"
               style={{
                 background: 'rgba(255,255,255,0.05)',
@@ -67,7 +69,7 @@ export default function FloatingButtons() {
               animate={{ opacity: 1, y: 0, scale: 1 }}
               exit={{ opacity: 0, y: 16, scale: 0.85 }}
               transition={{ duration: 0.25, delay: 0.05, ease: [0.16, 1, 0.3, 1] }}
-              aria-label="Chat on WhatsApp"
+              aria-label={t.floating.wa}
               className="w-10 h-10 sm:w-12 sm:h-12 rounded-full flex items-center justify-center transition-all duration-300"
               style={{
                 background: 'rgba(37,211,102,0.12)',
