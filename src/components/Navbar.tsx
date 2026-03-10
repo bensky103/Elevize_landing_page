@@ -1,17 +1,19 @@
 import { useState, useEffect } from 'react'
 import { motion, useScroll, useTransform } from 'framer-motion'
+import { useLanguage } from '../i18n/context'
 
 const WA_NUMBER = import.meta.env.VITE_WA_NUMBER as string
 const WA_MESSAGE = encodeURIComponent(import.meta.env.VITE_WA_MESSAGE as string)
 
-const navLinks = [
-  { label: 'Services', href: '#services' },
-  { label: 'Projects', href: '#projects' },
-  { label: 'Contact', href: '#contact' },
-]
-
 export default function Navbar() {
+  const { t, lang, setLang } = useLanguage()
   const [menuOpen, setMenuOpen] = useState(false)
+
+  const navLinks = [
+    { label: t.nav.services, href: '#services' },
+    { label: t.nav.projects, href: '#projects' },
+    { label: t.nav.contact, href: '#contact' },
+  ]
   const { scrollY } = useScroll()
   const bgOpacity = useTransform(scrollY, [0, 60], [0, 1])
   const borderOpacity = useTransform(scrollY, [0, 60], [0, 1])
@@ -90,8 +92,31 @@ export default function Navbar() {
             }}
           >
             <WhatsAppIcon />
-            <span className="hidden sm:inline">Let's Talk</span>
+            <span className="hidden sm:inline">{t.nav.cta}</span>
           </a>
+
+          {/* Language switcher */}
+          <div
+            className="hidden sm:flex items-center gap-1 px-2 py-1 rounded-full"
+            style={{ background: 'rgba(255,255,255,0.05)', border: '1px solid rgba(255,255,255,0.08)' }}
+          >
+            {(['he', 'en', 'ru'] as const).map((l) => (
+              <button
+                key={l}
+                onClick={() => setLang(l)}
+                className="px-2 py-0.5 rounded-full text-xs transition-all duration-200"
+                style={{
+                  fontFamily: 'var(--font-mono)',
+                  fontSize: '0.7rem',
+                  background: lang === l ? 'rgba(124,58,237,0.3)' : 'transparent',
+                  color: lang === l ? '#c4b5fd' : 'rgba(255,255,255,0.35)',
+                  border: lang === l ? '1px solid rgba(124,58,237,0.4)' : '1px solid transparent',
+                }}
+              >
+                {l.toUpperCase()}
+              </button>
+            ))}
+          </div>
 
           {/* Mobile hamburger */}
           <button
@@ -148,8 +173,25 @@ export default function Navbar() {
             style={{ fontFamily: 'var(--font-body)', fontSize: '0.85rem' }}
           >
             <WhatsAppIcon />
-            Let's Talk on WhatsApp
+            {t.nav.ctaMobile}
           </a>
+          <div className="flex gap-2 pt-2">
+            {(['he', 'en', 'ru'] as const).map((l) => (
+              <button
+                key={l}
+                onClick={() => { setLang(l); setMenuOpen(false) }}
+                className="px-3 py-1 rounded-full text-xs transition-all duration-200"
+                style={{
+                  fontFamily: 'var(--font-mono)',
+                  background: lang === l ? 'rgba(124,58,237,0.25)' : 'rgba(255,255,255,0.05)',
+                  color: lang === l ? '#c4b5fd' : 'rgba(255,255,255,0.35)',
+                  border: `1px solid ${lang === l ? 'rgba(124,58,237,0.35)' : 'rgba(255,255,255,0.08)'}`,
+                }}
+              >
+                {l.toUpperCase()}
+              </button>
+            ))}
+          </div>
         </div>
       </motion.div>
     </motion.header>
