@@ -1,43 +1,5 @@
 import { motion } from 'framer-motion'
-
-const projects = [
-  {
-    title: 'Lead Automation Engine',
-    description:
-      'End-to-end lead capture and routing system integrating web forms, Monday.com boards, and Twilio SMS notifications — zero manual intervention.',
-    gradient: 'linear-gradient(135deg, #4c1d95 0%, #1e1b4b 50%, #0f172a 100%)',
-    accent: 'purple',
-    tags: ['Monday.com', 'Twilio', 'FastAPI', 'Automation'],
-    status: 'Live',
-  },
-  {
-    title: 'AI Support Agent',
-    description:
-      'Multi-turn conversational agent with RAG over product docs, capable of resolving 80% of support tickets autonomously before escalating.',
-    gradient: 'linear-gradient(135deg, #0c4a6e 0%, #0f172a 50%, #1e1b4b 100%)',
-    accent: 'cyan',
-    tags: ['OpenAI', 'LangChain', 'RAG', 'React'],
-    status: 'Live',
-  },
-  {
-    title: 'Operations Dashboard',
-    description:
-      'Real-time internal ops dashboard connecting inventory, scheduling, and team performance into a single unified view with live alerts.',
-    gradient: 'linear-gradient(135deg, #312e81 0%, #0f172a 50%, #064e3b 100%)',
-    accent: 'purple',
-    tags: ['React', 'TypeScript', 'FastAPI', 'SSE'],
-    status: 'Live',
-  },
-  {
-    title: 'Your Project Here',
-    description:
-      "Got a problem that software can solve? We'll turn it into a production system that actually works — precisely the way you need it.",
-    gradient: 'linear-gradient(135deg, #1c1917 0%, #0f172a 60%, #1c1917 100%)',
-    accent: 'cyan',
-    tags: ['Your Stack', 'Your Problem', 'Our Solution'],
-    status: 'Next?',
-  },
-]
+import { useLanguage } from '../i18n/context'
 
 const cardVariants = {
   hidden: { opacity: 0, y: 36 },
@@ -48,7 +10,23 @@ const cardVariants = {
   }),
 }
 
+const projectsMeta = [
+  { gradient: 'linear-gradient(135deg, #4c1d95 0%, #1e1b4b 50%, #0f172a 100%)', accent: 'purple' as const, isPlaceholder: false, tags: ['Monday.com', 'Twilio', 'FastAPI', 'Automation'] },
+  { gradient: 'linear-gradient(135deg, #0c4a6e 0%, #0f172a 50%, #1e1b4b 100%)', accent: 'cyan' as const,   isPlaceholder: false, tags: ['OpenAI', 'LangChain', 'RAG', 'React'] },
+  { gradient: 'linear-gradient(135deg, #312e81 0%, #0f172a 50%, #064e3b 100%)', accent: 'purple' as const, isPlaceholder: false, tags: ['React', 'TypeScript', 'FastAPI', 'SSE'] },
+  { gradient: 'linear-gradient(135deg, #1c1917 0%, #0f172a 60%, #1c1917 100%)', accent: 'cyan' as const,   isPlaceholder: true,  tags: ['Your Stack', 'Your Problem', 'Our Solution'] },
+]
+
 export default function Projects() {
+  const { t } = useLanguage()
+
+  const projects = t.projects.items.map((item, i) => ({
+    ...projectsMeta[i],
+    title: item.title,
+    description: item.description,
+    status: projectsMeta[i].isPlaceholder ? t.projects.nextStatus : t.projects.liveStatus,
+  }))
+
   return (
     <section id="projects" className="section-padding relative">
       {/* BG accent */}
@@ -74,23 +52,23 @@ export default function Projects() {
             className="tag tag-cyan"
             style={{ fontFamily: 'var(--font-mono)' }}
           >
-            02 / Projects
+            {t.projects.tag}
           </span>
           <h2
             className="text-3xl md:text-5xl font-bold"
             style={{ fontFamily: 'var(--font-display)', color: 'var(--white)' }}
           >
-            What We've Shipped
+            {t.projects.heading}
           </h2>
           <p className="max-w-lg text-base" style={{ color: 'var(--muted)', fontWeight: 300 }}>
-            A sample of what we've built. Every project is different — the quality never is.
+            {t.projects.subline}
           </p>
         </motion.div>
 
         {/* Cards grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
           {projects.map((p, i) => (
-            <ProjectCard key={p.title} project={p} index={i} />
+            <ProjectCard key={i} project={p} index={i} />
           ))}
         </div>
       </div>
@@ -98,11 +76,18 @@ export default function Projects() {
   )
 }
 
-type Project = typeof projects[0]
+type Project = {
+  gradient: string
+  accent: 'purple' | 'cyan'
+  isPlaceholder: boolean
+  tags: string[]
+  title: string
+  description: string
+  status: string
+}
 
 function ProjectCard({ project, index }: { project: Project; index: number }) {
   const isPurple = project.accent === 'purple'
-  const isLast = index === projects.length - 1
 
   return (
     <motion.div
@@ -113,12 +98,12 @@ function ProjectCard({ project, index }: { project: Project; index: number }) {
       variants={cardVariants}
       className="glass-card group flex flex-col"
       style={{
-        borderColor: isLast
+        borderColor: project.isPlaceholder
           ? 'rgba(6,182,212,0.3)'
           : isPurple
           ? 'rgba(124,58,237,0.12)'
           : 'rgba(6,182,212,0.1)',
-        borderStyle: isLast ? 'dashed' : 'solid',
+        borderStyle: project.isPlaceholder ? 'dashed' : 'solid',
       }}
     >
       {/* Thumbnail */}
@@ -151,14 +136,14 @@ function ProjectCard({ project, index }: { project: Project; index: number }) {
           style={{
             fontFamily: 'var(--font-mono)',
             fontSize: '0.65rem',
-            background: project.status === 'Next?'
+            background: project.isPlaceholder
               ? 'rgba(6,182,212,0.15)'
               : 'rgba(34,197,94,0.12)',
-            border: `1px solid ${project.status === 'Next?' ? 'rgba(6,182,212,0.3)' : 'rgba(34,197,94,0.3)'}`,
-            color: project.status === 'Next?' ? '#67e8f9' : '#86efac',
+            border: `1px solid ${project.isPlaceholder ? 'rgba(6,182,212,0.3)' : 'rgba(34,197,94,0.3)'}`,
+            color: project.isPlaceholder ? '#67e8f9' : '#86efac',
           }}
         >
-          {project.status === 'Next?' ? '→' : '●'} {project.status}
+          {project.isPlaceholder ? '→' : '●'} {project.status}
         </span>
 
         {/* Hover shine sweep */}
