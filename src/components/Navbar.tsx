@@ -97,7 +97,7 @@ export default function Navbar() {
 
           {/* Language switcher */}
           <div
-            className="hidden sm:flex items-center gap-1 px-2 py-1 rounded-full"
+            className="hidden md:flex items-center gap-1 px-2 py-1 rounded-full"
             style={{ background: 'rgba(255,255,255,0.05)', border: '1px solid rgba(255,255,255,0.08)' }}
           >
             {(['he', 'en', 'ru'] as const).map((l) => (
