@@ -16,8 +16,8 @@
   --muted: rgba(240, 240, 255, 0.45);
   --muted-light: rgba(240, 240, 255, 0.65);
 
-  --font-display: 'Syne', sans-serif;
-  --font-body: 'DM Sans', sans-serif;
+  --font-display: 'Rubik', sans-serif;
+  --font-body: 'Rubik', sans-serif;
   --font-mono: 'DM Mono', monospace;
 
   --glow-purple: 0 0 30px rgba(124, 58, 237, 0.35), 0 0 60px rgba(124, 58, 237, 0.15);
@@ -69,6 +69,11 @@ body {
 ::selection {
   background: rgba(124, 58, 237, 0.35);
   color: #fff;
+}
+
+/* Hebrew typography — letter-spacing doesn't apply to Hebrew script */
+[dir="rtl"] {
+  letter-spacing: 0 !important;
 }
 
 /* Typography resets */
