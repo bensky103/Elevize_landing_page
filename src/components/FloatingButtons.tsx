@@ -3,10 +3,10 @@ import { motion, AnimatePresence } from 'framer-motion'
 import { useLanguage } from '../i18n/context'
 
 const WA_NUMBER = import.meta.env.VITE_WA_NUMBER as string
-const WA_MESSAGE = encodeURIComponent(import.meta.env.VITE_WA_MESSAGE as string)
 
 export default function FloatingButtons() {
   const { t } = useLanguage()
+  const WA_MESSAGE = encodeURIComponent(t.waMessage)
   const [visible, setVisible] = useState(false)
 
   useEffect(() => {

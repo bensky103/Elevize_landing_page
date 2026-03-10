@@ -11,10 +11,10 @@ const cardVariants = {
 }
 
 const projectsMeta = [
-  { gradient: 'linear-gradient(135deg, #4c1d95 0%, #1e1b4b 50%, #0f172a 100%)', accent: 'purple' as const, isPlaceholder: false, tags: ['Monday.com', 'Twilio', 'FastAPI', 'Automation'] },
-  { gradient: 'linear-gradient(135deg, #0c4a6e 0%, #0f172a 50%, #1e1b4b 100%)', accent: 'cyan' as const,   isPlaceholder: false, tags: ['OpenAI', 'LangChain', 'RAG', 'React'] },
-  { gradient: 'linear-gradient(135deg, #312e81 0%, #0f172a 50%, #064e3b 100%)', accent: 'purple' as const, isPlaceholder: false, tags: ['React', 'TypeScript', 'FastAPI', 'SSE'] },
-  { gradient: 'linear-gradient(135deg, #1c1917 0%, #0f172a 60%, #1c1917 100%)', accent: 'cyan' as const,   isPlaceholder: true,  tags: ['Your Stack', 'Your Problem', 'Our Solution'] },
+  { image: '/projects/lead-automation.gif', gradient: 'linear-gradient(135deg, #4c1d95 0%, #1e1b4b 50%, #0f172a 100%)', accent: 'purple' as const, isPlaceholder: false, tags: ['Monday.com', 'Twilio', 'FastAPI', 'Automation'] },
+  { image: '/projects/ai-support.gif',      gradient: 'linear-gradient(135deg, #0c4a6e 0%, #0f172a 50%, #1e1b4b 100%)', accent: 'cyan' as const,   isPlaceholder: false, tags: ['OpenAI', 'LangChain', 'RAG', 'React'] },
+  { image: '/projects/ops-dashboard.gif',   gradient: 'linear-gradient(135deg, #312e81 0%, #0f172a 50%, #064e3b 100%)', accent: 'purple' as const, isPlaceholder: false, tags: ['React', 'TypeScript', 'FastAPI', 'SSE'] },
+  { image: null,                            gradient: 'linear-gradient(135deg, #1c1917 0%, #0f172a 60%, #1c1917 100%)', accent: 'cyan' as const,   isPlaceholder: true,  tags: ['Your Stack', 'Your Problem', 'Our Solution'] },
 ]
 
 export default function Projects() {
@@ -77,6 +77,7 @@ export default function Projects() {
 }
 
 type Project = {
+  image: string | null
   gradient: string
   accent: 'purple' | 'cyan'
   isPlaceholder: boolean
@@ -109,8 +110,15 @@ function ProjectCard({ project, index }: { project: Project; index: number }) {
       {/* Thumbnail */}
       <div
         className="relative h-36 sm:h-44 flex-shrink-0 overflow-hidden"
-        style={{ background: project.gradient }}
+        style={!project.image ? { background: project.gradient } : undefined}
       >
+        {project.image && (
+          <img
+            src={project.image}
+            alt={project.title}
+            className="w-full h-full object-cover"
+          />
+        )}
         {/* Grid overlay on thumbnail */}
         <div
           className="absolute inset-0 opacity-20"

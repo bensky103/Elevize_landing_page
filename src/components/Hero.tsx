@@ -8,7 +8,7 @@ export default function Hero() {
     <section
       id="hero"
       className="relative min-h-screen flex flex-col items-center justify-center overflow-hidden"
-      style={{ paddingTop: '4rem' }}
+      style={{ paddingTop: 'var(--navbar-height)' }}
     >
       {/* Animated grid background */}
       <GridBackground />

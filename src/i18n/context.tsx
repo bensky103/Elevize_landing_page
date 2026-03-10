@@ -17,7 +17,10 @@ export function LanguageProvider({ children }: { children: React.ReactNode }) {
   useEffect(() => {
     document.documentElement.lang = lang
     document.documentElement.dir = t.dir
-  }, [lang, t.dir])
+    document.title = t.pageTitle
+    const metaDesc = document.querySelector('meta[name="description"]')
+    if (metaDesc) metaDesc.setAttribute('content', t.pageDescription)
+  }, [lang, t.dir, t.pageTitle, t.pageDescription])
 
   return (
     <LangContext.Provider value={{ lang, setLang, t, dir: t.dir }}>

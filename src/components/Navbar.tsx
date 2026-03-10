@@ -3,10 +3,10 @@ import { motion, useScroll, useTransform } from 'framer-motion'
 import { useLanguage } from '../i18n/context'
 
 const WA_NUMBER = import.meta.env.VITE_WA_NUMBER as string
-const WA_MESSAGE = encodeURIComponent(import.meta.env.VITE_WA_MESSAGE as string)
 
 export default function Navbar() {
   const { t, lang, setLang } = useLanguage()
+  const WA_MESSAGE = encodeURIComponent(t.waMessage)
   const [menuOpen, setMenuOpen] = useState(false)
 
   const navLinks = [
@@ -39,7 +39,7 @@ export default function Navbar() {
         className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-purple-500/30 to-transparent"
       />
 
-      <nav className="relative site-container h-20 flex items-center justify-between">
+      <nav className="relative site-container grid grid-cols-[1fr_auto_1fr] items-center" style={{ height: 'var(--navbar-height)' }}>
         {/* Logo */}
         <a href="#" className="flex items-center gap-2.5 group">
           <NavLogoMark />
@@ -67,7 +67,7 @@ export default function Navbar() {
         </ul>
 
         {/* Right-side controls — WhatsApp CTA + mobile hamburger grouped together */}
-        <div className="flex items-center gap-2">
+        <div className="flex items-center gap-2 justify-end">
           <a
             href={`https://wa.me/${WA_NUMBER}?text=${WA_MESSAGE}`}
             target="_blank"

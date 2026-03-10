@@ -3,7 +3,7 @@ import { useLanguage } from '../i18n/context'
 
 function FooterLogoMark() {
   return (
-    <svg width="24" height="24" viewBox="0 0 32 32" fill="none">
+    <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
       <defs>
         <linearGradient id="footer-logo-grad" x1="0" y1="0" x2="32" y2="32" gradientUnits="userSpaceOnUse">
           <stop offset="0%" stopColor="#a855f7" stopOpacity="0.7" />
@@ -53,44 +53,43 @@ export default function Footer() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: false }}
           transition={{ duration: 0.4 }}
-          className="flex flex-col md:flex-row items-center justify-between gap-6"
+          className="flex flex-col md:flex-row items-center justify-between gap-8"
         >
           {/* Logo + tagline */}
-          <div className="flex flex-col gap-1">
-            <div className="flex items-center gap-2">
-              <FooterLogoMark />
+          <div className="flex items-center gap-3">
+            <FooterLogoMark />
+            <div className="flex flex-col gap-0.5">
               <span
-                className="text-sm font-bold tracking-tight"
-                style={{ fontFamily: 'var(--font-display)', color: 'rgba(255,255,255,0.6)' }}
+                className="text-base font-bold tracking-tight"
+                style={{ fontFamily: 'var(--font-display)', color: 'rgba(255,255,255,0.7)' }}
               >
                 Elevize
               </span>
+              <span
+                style={{
+                  fontFamily: 'var(--font-mono)',
+                  fontSize: '0.7rem',
+                  color: 'rgba(255,255,255,0.28)',
+                }}
+              >
+                {t.footer.tagline}
+              </span>
             </div>
-            <span
-              style={{
-                fontFamily: 'var(--font-mono)',
-                fontSize: '0.6rem',
-                color: 'rgba(255,255,255,0.2)',
-                letterSpacing: '0.06em',
-              }}
-            >
-              {t.footer.tagline}
-            </span>
           </div>
 
           {/* Links */}
-          <nav className="flex items-center gap-6">
+          <nav className="flex items-center gap-8">
             {links.map((link) => (
               <a
                 key={link.href}
                 href={link.href}
-                className="text-xs transition-colors duration-200"
+                className="text-sm transition-colors duration-200"
                 style={{
                   fontFamily: 'var(--font-mono)',
-                  color: 'rgba(255,255,255,0.28)',
+                  color: 'rgba(255,255,255,0.35)',
                 }}
-                onMouseEnter={(e) => { e.currentTarget.style.color = 'rgba(255,255,255,0.6)' }}
-                onMouseLeave={(e) => { e.currentTarget.style.color = 'rgba(255,255,255,0.28)' }}
+                onMouseEnter={(e) => { e.currentTarget.style.color = 'rgba(255,255,255,0.7)' }}
+                onMouseLeave={(e) => { e.currentTarget.style.color = 'rgba(255,255,255,0.35)' }}
               >
                 {link.label}
               </a>
@@ -99,8 +98,8 @@ export default function Footer() {
 
           {/* Copyright */}
           <p
-            className="text-xs"
-            style={{ fontFamily: 'var(--font-mono)', color: 'rgba(255,255,255,0.2)', letterSpacing: '0.04em' }}
+            className="text-sm"
+            style={{ fontFamily: 'var(--font-mono)', color: 'rgba(255,255,255,0.28)' }}
           >
             © {new Date().getFullYear()} Elevize
           </p>
