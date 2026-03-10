@@ -1,10 +1,9 @@
 import { useEffect, useRef } from 'react'
 import { motion } from 'framer-motion'
-
-const HEADLINE_WORDS = ['Build', 'What', 'Others', "Can't."]
-const SUBWORDS = ['Automations', '·', 'AI Agents', '·', 'Custom Software', '·', 'Anything']
+import { useLanguage } from '../i18n/context'
 
 export default function Hero() {
+  const { t } = useLanguage()
   return (
     <section
       id="hero"
@@ -52,7 +51,7 @@ export default function Hero() {
               />
               <span className="relative inline-flex w-1.5 h-1.5 rounded-full bg-cyan-400" />
             </span>
-            Software Solutions
+            {t.hero.badge}
           </span>
         </motion.div>
 
@@ -69,20 +68,20 @@ export default function Hero() {
             className="flex flex-wrap justify-center"
             style={{ gap: '0.25em' }}
           >
-            {HEADLINE_WORDS.map((word, i) => (
+            {t.hero.headlineWords.map((word, i) => (
               <motion.span
                 key={word}
                 initial={{ opacity: 0, y: 40, filter: 'blur(8px)' }}
                 animate={{ opacity: 1, y: 0, filter: 'blur(0px)' }}
                 transition={{ delay: 0.4 + i * 0.12, duration: 0.5, ease: [0.16, 1, 0.3, 1] }}
                 style={{
-                  color: i === HEADLINE_WORDS.length - 1 ? 'transparent' : 'var(--white)',
+                  color: i === t.hero.headlineWords.length - 1 ? 'transparent' : 'var(--white)',
                   backgroundImage:
-                    i === HEADLINE_WORDS.length - 1
+                    i === t.hero.headlineWords.length - 1
                       ? 'linear-gradient(135deg, #c084fc 0%, #a855f7 35%, #06b6d4 100%)'
                       : undefined,
-                  WebkitBackgroundClip: i === HEADLINE_WORDS.length - 1 ? 'text' : undefined,
-                  backgroundClip: i === HEADLINE_WORDS.length - 1 ? 'text' : undefined,
+                  WebkitBackgroundClip: i === t.hero.headlineWords.length - 1 ? 'text' : undefined,
+                  backgroundClip: i === t.hero.headlineWords.length - 1 ? 'text' : undefined,
                 }}
               >
                 {word}
@@ -99,7 +98,7 @@ export default function Hero() {
           className="text-base md:text-lg max-w-xl"
           style={{ color: 'var(--muted)', fontFamily: 'var(--font-body)', fontWeight: 300 }}
         >
-          We turn ambitious ideas into production-grade reality — custom automations, AI agents, and software built exactly to your needs.
+          {t.hero.subline}
         </motion.p>
 
         {/* Sub-tags scroll */}
@@ -109,7 +108,7 @@ export default function Hero() {
           transition={{ delay: 1.3, duration: 0.4 }}
           className="flex flex-wrap items-center justify-center gap-2"
         >
-          {SUBWORDS.map((w, i) =>
+          {t.hero.subwords.map((w, i) =>
             w === '·' ? (
               <span key={i} style={{ color: 'rgba(255,255,255,0.15)', fontFamily: 'var(--font-mono)' }}>·</span>
             ) : (
@@ -135,7 +134,7 @@ export default function Hero() {
           transition={{ delay: 1.5, duration: 0.45, ease: [0.16, 1, 0.3, 1] }}
           className="flex flex-col sm:flex-row items-center gap-3 mt-2"
         >
-          <GlowButton href="#contact" label="Start a Project" />
+          <GlowButton href="#contact" label={t.hero.ctaStart} arrow={t.arrow} />
           <a
             href="#projects"
             className="px-6 py-3 rounded-full text-sm font-medium transition-all duration-300"
@@ -153,7 +152,7 @@ export default function Hero() {
               e.currentTarget.style.borderColor = 'rgba(255,255,255,0.1)'
             }}
           >
-            View Our Work
+            {t.hero.ctaWork}
           </a>
         </motion.div>
 
@@ -172,7 +171,7 @@ export default function Hero() {
   )
 }
 
-function GlowButton({ href, label }: { href: string; label: string }) {
+function GlowButton({ href, label, arrow }: { href: string; label: string; arrow: string }) {
   return (
     <a
       href={href}
@@ -200,7 +199,7 @@ function GlowButton({ href, label }: { href: string; label: string }) {
           background: 'linear-gradient(105deg, transparent 40%, rgba(255,255,255,0.15) 50%, transparent 60%)',
         }}
       />
-      {label} →
+      {label} {arrow}
     </a>
   )
 }
