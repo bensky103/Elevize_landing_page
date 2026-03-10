@@ -1,3 +1,4 @@
+import { LanguageProvider } from './i18n/context'
 import Navbar from './components/Navbar'
 import Hero from './components/Hero'
 import Services from './components/Services'
@@ -8,7 +9,7 @@ import FloatingButtons from './components/FloatingButtons'
 
 export default function App() {
   return (
-    <>
+    <LanguageProvider>
       <Navbar />
       <main>
         <Hero />
@@ -18,6 +19,6 @@ export default function App() {
       </main>
       <Footer />
       <FloatingButtons />
-    </>
+    </LanguageProvider>
   )
 }
