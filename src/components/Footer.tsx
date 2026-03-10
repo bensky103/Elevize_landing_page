@@ -1,4 +1,5 @@
 import { motion } from 'framer-motion'
+import { useLanguage } from '../i18n/context'
 
 function FooterLogoMark() {
   return (
@@ -23,6 +24,12 @@ function FooterLogoMark() {
 }
 
 export default function Footer() {
+  const { t } = useLanguage()
+  const links = [
+    { label: t.nav.services, href: '#services' },
+    { label: t.nav.projects, href: '#projects' },
+    { label: t.nav.contact, href: '#contact' },
+  ]
   return (
     <footer className="relative py-12 overflow-hidden">
       {/* Top gradient divider — subtle glow */}
@@ -67,17 +74,13 @@ export default function Footer() {
                 letterSpacing: '0.06em',
               }}
             >
-              Build What Others Can't.
+              {t.footer.tagline}
             </span>
           </div>
 
           {/* Links */}
           <nav className="flex items-center gap-6">
-            {[
-              { label: 'Services', href: '#services' },
-              { label: 'Projects', href: '#projects' },
-              { label: 'Contact', href: '#contact' },
-            ].map((link) => (
+            {links.map((link) => (
               <a
                 key={link.href}
                 href={link.href}
