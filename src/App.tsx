@@ -24,8 +24,8 @@ export default function App() {
         <Projects />
         <About />
         <Testimonials />
-        <FAQ />
         <Contact />
+        <FAQ />
       </main>
       <Footer />
       <FloatingButtons />

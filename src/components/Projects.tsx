@@ -183,7 +183,7 @@ function ProjectCard({ project, index }: { project: Project; index: number }) {
         >
           {project.title}
         </h3>
-        <p className="text-sm leading-relaxed" style={{ color: 'var(--muted)', fontWeight: 300 }}>
+        <p className="text-base leading-relaxed" style={{ color: 'var(--muted)', fontWeight: 300 }}>
           {project.description}
         </p>
         <div className="flex flex-wrap gap-1.5 mt-auto pt-2">

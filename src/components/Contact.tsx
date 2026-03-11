@@ -154,7 +154,7 @@ export default function Contact() {
                   >
                     {t.contact.successTitle}
                   </h3>
-                  <p className="text-sm" style={{ color: 'var(--muted)', fontWeight: 300 }}>
+                  <p className="text-base" style={{ color: 'var(--muted)', fontWeight: 300 }}>
                     {t.contact.successSub}
                   </p>
                 </motion.div>

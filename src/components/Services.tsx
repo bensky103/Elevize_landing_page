@@ -244,7 +244,7 @@ function ServiceCard({ service, index }: { service: ServiceItem; index: number }
         >
           {service.label}
         </h3>
-        <p className="text-sm leading-relaxed" style={{ color: 'var(--muted)', fontWeight: 300 }}>
+        <p className="text-base leading-relaxed" style={{ color: 'var(--muted)', fontWeight: 300 }}>
           {service.description}
         </p>
       </div>

@@ -117,7 +117,7 @@ export default function FAQ() {
                           aria-hidden
                         />
                         <p
-                          className="text-sm leading-relaxed"
+                          className="text-base leading-relaxed"
                           style={{ color: 'var(--muted)', fontWeight: 300 }}
                         >
                           {item.a}

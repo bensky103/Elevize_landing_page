@@ -88,7 +88,7 @@ export default function About() {
                   {stat.value}
                 </span>
                 <span
-                  className="text-xs leading-snug"
+                  className="text-sm leading-snug"
                   style={{
                     fontFamily: 'var(--font-mono)',
                     color: 'rgba(255,255,255,0.32)',

@@ -11,9 +11,14 @@ export default function Navbar() {
 
   const navLinks = [
     { label: t.nav.services, href: '#services' },
+    { label: t.nav.process, href: '#process' },
     { label: t.nav.projects, href: '#projects' },
+    { label: t.nav.about, href: '#about' },
+    { label: t.nav.testimonials, href: '#testimonials' },
     { label: t.nav.contact, href: '#contact' },
+    { label: t.nav.faq, href: '#faq' },
   ]
+  const displayLinks = lang === 'he' ? [...navLinks].reverse() : navLinks
   const { scrollY } = useScroll()
   const bgOpacity = useTransform(scrollY, [0, 60], [0, 1])
   const borderOpacity = useTransform(scrollY, [0, 60], [0, 1])
@@ -27,6 +32,7 @@ export default function Navbar() {
 
   return (
     <motion.header
+      dir="ltr"
       style={{}}
       className="fixed top-0 left-0 right-0 z-50"
     >
@@ -51,14 +57,14 @@ export default function Navbar() {
           </span>
         </a>
 
-        {/* Desktop nav links */}
-        <ul className="hidden md:flex items-center gap-8">
-          {navLinks.map((link) => (
+        {/* Desktop nav links — grid center column guarantees true centering with layout boundary enforcement */}
+        <ul className="hidden md:flex items-center justify-center gap-5">
+          {displayLinks.map((link) => (
             <li key={link.href}>
               <a
                 href={link.href}
                 className="text-sm font-mono text-white/50 hover:text-white transition-colors duration-200 tracking-wide"
-                style={{ fontFamily: 'var(--font-mono)', fontSize: '0.8rem' }}
+                style={{ fontFamily: 'var(--font-mono)', fontSize: '0.875rem' }}
               >
                 {link.label}
               </a>
@@ -72,13 +78,13 @@ export default function Navbar() {
             href={`https://wa.me/${WA_NUMBER}?text=${WA_MESSAGE}`}
             target="_blank"
             rel="noopener noreferrer"
-            className="flex items-center gap-2 px-3 md:px-4 py-1.5 rounded-full text-sm font-medium transition-all duration-300"
+            className="flex items-center gap-2 px-3 md:px-4 py-1.5 rounded-full text-sm font-medium transition-all duration-300 whitespace-nowrap"
             style={{
               background: 'rgba(124, 58, 237, 0.15)',
               border: '1px solid rgba(124, 58, 237, 0.4)',
               color: '#c4b5fd',
               fontFamily: 'var(--font-body)',
-              fontSize: '0.82rem',
+              fontSize: '0.9rem',
             }}
             onMouseEnter={(e) => {
               const el = e.currentTarget
@@ -92,7 +98,7 @@ export default function Navbar() {
             }}
           >
             <WhatsAppIcon />
-            <span className="hidden sm:inline">{t.nav.cta}</span>
+            <span className="hidden lg:inline">{t.nav.cta}</span>
           </a>
 
           {/* Language switcher */}
@@ -150,7 +156,11 @@ export default function Navbar() {
         animate={menuOpen ? { height: 'auto', opacity: 1 } : { height: 0, opacity: 0 }}
         transition={{ duration: 0.25, ease: 'easeInOut' }}
         className="md:hidden overflow-hidden"
-        style={{ background: 'rgba(4, 4, 15, 0.98)', borderTop: '1px solid rgba(255,255,255,0.06)' }}
+        style={{
+          background: 'rgba(4, 4, 15, 0.98)',
+          borderTop: '1px solid rgba(255,255,255,0.06)',
+          pointerEvents: menuOpen ? 'auto' : 'none',
+        }}
       >
         <div className="px-6 py-4 flex flex-col gap-4">
           {navLinks.map((link) => (
@@ -159,7 +169,7 @@ export default function Navbar() {
               href={link.href}
               onClick={() => setMenuOpen(false)}
               className="text-white/60 hover:text-white transition-colors py-1"
-              style={{ fontFamily: 'var(--font-mono)', fontSize: '0.85rem' }}
+              style={{ fontFamily: 'var(--font-mono)', fontSize: '0.9rem' }}
             >
               {link.label}
             </a>
@@ -170,7 +180,7 @@ export default function Navbar() {
             rel="noopener noreferrer"
             onClick={() => setMenuOpen(false)}
             className="flex items-center gap-2 text-purple-400 py-1"
-            style={{ fontFamily: 'var(--font-body)', fontSize: '0.85rem' }}
+            style={{ fontFamily: 'var(--font-body)', fontSize: '0.9rem' }}
           >
             <WhatsAppIcon />
             {t.nav.ctaMobile}

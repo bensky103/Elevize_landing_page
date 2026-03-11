@@ -64,7 +64,7 @@ export default function Testimonials() {
 
                 {/* Quote */}
                 <p
-                  className="text-sm leading-relaxed flex-grow"
+                  className="text-base leading-relaxed flex-grow"
                   style={{ color: 'var(--muted-light)', fontWeight: 300 }}
                 >
                   "{item.quote}"
@@ -112,7 +112,7 @@ export default function Testimonials() {
                       {item.name}
                     </span>
                     <span
-                      className="text-xs"
+                      className="text-sm"
                       style={{ fontFamily: 'var(--font-mono)', color: 'rgba(255,255,255,0.28)' }}
                     >
                       {item.role}
@@ -125,20 +125,23 @@ export default function Testimonials() {
         </div>
 
         {/* Translation note */}
-        <motion.p
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          viewport={{ once: false }}
-          transition={{ delay: 0.5, duration: 0.5 }}
-          className="text-center mt-8"
-          style={{
-            fontFamily: 'var(--font-mono)',
-            fontSize: '0.68rem',
-            color: 'rgba(255,255,255,0.18)',
-          }}
-        >
-          {t.testimonials.note}
-        </motion.p>
+        {t.testimonials.note && (
+          <motion.p
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5, delay: 0.3 }}
+            className="text-center mt-8"
+            style={{
+              fontFamily: 'var(--font-mono)',
+              fontSize: '0.72rem',
+              color: 'rgba(255,255,255,0.25)',
+              letterSpacing: '0.03em',
+            }}
+          >
+            {t.testimonials.note}
+          </motion.p>
+        )}
       </div>
     </section>
   )

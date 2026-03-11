@@ -9,8 +9,12 @@ export const translations = {
     waMessage: 'היי Elevize, אשמח לדון בפרויקט',
     nav: {
       services: 'שירותים',
+      process: 'תהליך',
       projects: 'פרויקטים',
+      about: 'אודות',
+      testimonials: 'לקוחות',
       contact: 'צור קשר',
+      faq: 'שאלות',
       cta: 'בואו נדבר',
       ctaMobile: 'דברו איתנו בוואטסאפ',
     },
@@ -52,7 +56,7 @@ export const translations = {
       ],
     },
     projects: {
-      tag: '02 / פרויקטים',
+      tag: '03 / פרויקטים',
       heading: 'מה שיצרנו',
       subline: 'דוגמה ממה שבנינו. כל פרויקט שונה — האיכות אף פעם לא.',
       liveStatus: 'חי',
@@ -81,7 +85,7 @@ export const translations = {
       ],
     },
     contact: {
-      tag: '03 / צור קשר',
+      tag: '06 / צור קשר',
       heading1: 'מוכנים לבנות',
       heading2: 'משהו אמיתי?',
       subline:
@@ -110,10 +114,10 @@ export const translations = {
       wa: 'שוחח בוואטסאפ',
     },
     about: {
-      tag: '// אודות',
+      tag: '04 / אודות',
       heading: 'מפתחים שבונים דברים שעובדים',
       body: 'אנחנו צוות קטן של מהנדסי תוכנה ומומחי AI. לא חברת ייעוץ, לא סוכנות דיגיטל — מפתחים שמעדיפים קוד נקי על שקפים יפים.',
-      stat1Value: '3+',
+      stat1Value: '5+',
       stat1Label: 'שנות ניסיון',
       stat2Value: '20+',
       stat2Label: 'פרויקטים שנמסרו',
@@ -121,7 +125,7 @@ export const translations = {
       stat3Label: 'זמן תגובה',
     },
     process: {
-      tag: '// תהליך',
+      tag: '02 / תהליך',
       heading: 'איך אנחנו עובדים',
       subline: 'ללא בירוקרטיה, ללא הפתעות. שלבים ברורים מהרעיון לפרודקשן.',
       steps: [
@@ -132,9 +136,9 @@ export const translations = {
       ],
     },
     testimonials: {
-      tag: '// לקוחות',
+      tag: '05 / לקוחות',
       heading: 'מה אומרים עלינו',
-      note: '* חוות הדעת תורגמו לעברית',
+      note: '',
       items: [
         { name: 'דניאל לוי', role: 'מנכ״ל, חברת נדל״ן', quote: 'Elevize בנו לנו מערכת ניהול לידים תוך שבועיים. מה שלקח שעות של עבודה ידנית — עכשיו קורה אוטומטית. החיסכון בזמן הוא עצום.' },
         { name: 'מיכל כהן', role: 'מנהלת שיווק, סטארטאפ SaaS', quote: 'ביקשנו סוכן AI לתמיכת לקוחות. קיבלנו מערכת שפותרת 80% מהפניות לבד. הצוות שלנו סוף סוף יכול להתמקד בדברים שחשובים.' },
@@ -142,7 +146,7 @@ export const translations = {
       ],
     },
     faq: {
-      tag: '// שאלות',
+      tag: '07 / שאלות',
       heading: 'שאלות נפוצות',
       items: [
         { q: 'כמה זמן לוקח פרויקט טיפוסי?', a: 'תלוי בהיקף — אבל רוב הפרויקטים נמסרים תוך 2–6 שבועות. אוטומציות פשוטות יכולות להיות מוכנות תוך שבוע. תמיד נגדיר ציר זמן ברור לפני שנתחיל.' },
@@ -162,8 +166,12 @@ export const translations = {
     waMessage: "Hi Elevize, I'd like to discuss a project",
     nav: {
       services: 'Services',
+      process: 'Process',
       projects: 'Projects',
+      about: 'About',
+      testimonials: 'Clients',
       contact: 'Contact',
+      faq: 'FAQ',
       cta: "Let's Talk",
       ctaMobile: "Let's Talk on WhatsApp",
     },
@@ -205,7 +213,7 @@ export const translations = {
       ],
     },
     projects: {
-      tag: '02 / Projects',
+      tag: '03 / Projects',
       heading: "What We've Shipped",
       subline: "A sample of what we've built. Every project is different — the quality never is.",
       liveStatus: 'Live',
@@ -234,7 +242,7 @@ export const translations = {
       ],
     },
     contact: {
-      tag: '03 / Contact',
+      tag: '06 / Contact',
       heading1: 'Ready to build',
       heading2: 'something real?',
       subline:
@@ -263,10 +271,10 @@ export const translations = {
       wa: 'Chat on WhatsApp',
     },
     about: {
-      tag: '// About',
+      tag: '04 / About',
       heading: 'Developers who build things that work',
       body: "We're a small team of software engineers and AI specialists. Not a consultancy, not a digital agency — developers who prefer clean code over pretty slides.",
-      stat1Value: '3+',
+      stat1Value: '5+',
       stat1Label: 'Years Experience',
       stat2Value: '20+',
       stat2Label: 'Projects Delivered',
@@ -274,7 +282,7 @@ export const translations = {
       stat3Label: 'Response Time',
     },
     process: {
-      tag: '// Process',
+      tag: '02 / Process',
       heading: 'How We Work',
       subline: 'No bureaucracy, no surprises. Clear steps from idea to production.',
       steps: [
@@ -285,7 +293,7 @@ export const translations = {
       ],
     },
     testimonials: {
-      tag: '// Clients',
+      tag: '05 / Clients',
       heading: 'What They Say',
       note: '* Reviews translated from Hebrew',
       items: [
@@ -295,7 +303,7 @@ export const translations = {
       ],
     },
     faq: {
-      tag: '// FAQ',
+      tag: '07 / FAQ',
       heading: 'Frequently Asked Questions',
       items: [
         { q: 'How long does a typical project take?', a: "Depends on scope — but most projects are delivered within 2–6 weeks. Simple automations can be ready in a week. We always define a clear timeline before we start." },
@@ -315,8 +323,12 @@ export const translations = {
     waMessage: 'Привет Elevize, хочу обсудить проект',
     nav: {
       services: 'Услуги',
+      process: 'Процесс',
       projects: 'Проекты',
+      about: 'О нас',
+      testimonials: 'Клиенты',
       contact: 'Контакты',
+      faq: 'FAQ',
       cta: 'Напишите нам',
       ctaMobile: 'Напишите нам в WhatsApp',
     },
@@ -358,7 +370,7 @@ export const translations = {
       ],
     },
     projects: {
-      tag: '02 / Проекты',
+      tag: '03 / Проекты',
       heading: 'Что мы сделали',
       subline: 'Примеры нашей работы. Каждый проект уникален — качество неизменно.',
       liveStatus: 'Запущен',
@@ -387,7 +399,7 @@ export const translations = {
       ],
     },
     contact: {
-      tag: '03 / Контакты',
+      tag: '06 / Контакты',
       heading1: 'Готовы создать',
       heading2: 'что-то реальное?',
       subline:
@@ -416,10 +428,10 @@ export const translations = {
       wa: 'Чат в WhatsApp',
     },
     about: {
-      tag: '// О нас',
+      tag: '04 / О нас',
       heading: 'Разработчики, которые создают то, что работает',
       body: 'Мы небольшая команда инженеров и AI-специалистов. Не консалтинг, не агентство — разработчики, которые предпочитают чистый код красивым презентациям.',
-      stat1Value: '3+',
+      stat1Value: '5+',
       stat1Label: 'Лет опыта',
       stat2Value: '20+',
       stat2Label: 'Проектов сдано',
@@ -427,7 +439,7 @@ export const translations = {
       stat3Label: 'Время ответа',
     },
     process: {
-      tag: '// Процесс',
+      tag: '02 / Процесс',
       heading: 'Как мы работаем',
       subline: 'Без бюрократии, без сюрпризов. Чёткие шаги от идеи до продакшна.',
       steps: [
@@ -438,7 +450,7 @@ export const translations = {
       ],
     },
     testimonials: {
-      tag: '// Клиенты',
+      tag: '05 / Клиенты',
       heading: 'Отзывы клиентов',
       note: '* Отзывы переведены с иврита',
       items: [
@@ -448,7 +460,7 @@ export const translations = {
       ],
     },
     faq: {
-      tag: '// FAQ',
+      tag: '07 / FAQ',
       heading: 'Часто задаваемые вопросы',
       items: [
         { q: 'Сколько времени занимает типичный проект?', a: 'Зависит от объёма — но большинство проектов сдаются за 2–6 недель. Простые автоматизации могут быть готовы за неделю. Мы всегда определяем чёткие сроки до начала работы.' },

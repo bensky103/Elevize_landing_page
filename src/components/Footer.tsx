@@ -27,8 +27,12 @@ export default function Footer() {
   const { t } = useLanguage()
   const links = [
     { label: t.nav.services, href: '#services' },
+    { label: t.nav.process, href: '#process' },
     { label: t.nav.projects, href: '#projects' },
+    { label: t.nav.about, href: '#about' },
+    { label: t.nav.testimonials, href: '#testimonials' },
     { label: t.nav.contact, href: '#contact' },
+    { label: t.nav.faq, href: '#faq' },
   ]
   return (
     <footer className="relative py-12 overflow-hidden">
@@ -68,7 +72,7 @@ export default function Footer() {
               <span
                 style={{
                   fontFamily: 'var(--font-mono)',
-                  fontSize: '0.7rem',
+                  fontSize: '0.8rem',
                   color: 'rgba(255,255,255,0.28)',
                 }}
               >
@@ -78,7 +82,7 @@ export default function Footer() {
           </div>
 
           {/* Links */}
-          <nav className="flex items-center gap-8">
+          <nav className="flex flex-wrap items-center justify-center gap-x-5 gap-y-2">
             {links.map((link) => (
               <a
                 key={link.href}

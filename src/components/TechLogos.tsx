@@ -44,7 +44,7 @@ export default function TechLogos() {
               key={i}
               style={{
                 fontFamily: 'var(--font-mono)',
-                fontSize: '0.75rem',
+                fontSize: '0.875rem',
                 letterSpacing: '0.06em',
                 color: 'rgba(255,255,255,0.18)',
                 whiteSpace: 'nowrap',

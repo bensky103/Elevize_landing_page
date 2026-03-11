@@ -85,7 +85,7 @@ export default function Process() {
               </h3>
 
               <p
-                className="text-sm leading-relaxed"
+                className="text-base leading-relaxed"
                 style={{ color: 'var(--muted)', fontWeight: 300 }}
               >
                 {step.desc}
