@@ -21,7 +21,7 @@ export default function Testimonials() {
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: false, margin: '-80px' }}
+          viewport={{ once: true, margin: '-80px' }}
           transition={{ duration: 0.5 }}
           className="mb-12 flex flex-col gap-3 items-center text-center"
         >
@@ -46,7 +46,7 @@ export default function Testimonials() {
                 key={i}
                 initial={{ opacity: 0, y: 32 }}
                 whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: false, margin: '-60px' }}
+                viewport={{ once: true, margin: '-60px' }}
                 transition={{ delay: i * 0.12, duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
                 className="glass-card p-7 flex flex-col gap-5"
                 style={{

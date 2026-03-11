@@ -70,7 +70,7 @@ export default function Hero() {
           >
             {t.hero.headlineWords.map((word, i) => (
               <motion.span
-                key={word}
+                key={i}
                 initial={{ opacity: 0, y: 40, filter: 'blur(8px)' }}
                 animate={{ opacity: 1, y: 0, filter: 'blur(0px)' }}
                 transition={{ delay: 0.4 + i * 0.12, duration: 0.5, ease: [0.16, 1, 0.3, 1] }}
@@ -221,6 +221,8 @@ function GridBackground() {
     resize()
     window.addEventListener('resize', resize)
 
+    const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches
+
     // Dot grid — primary purple layer + secondary cyan corners + bright center
     const SPACING = 40
     let t = 0
@@ -281,7 +283,9 @@ function GridBackground() {
         }
       }
 
-      animRef.current = requestAnimationFrame(draw)
+      if (!prefersReducedMotion) {
+        animRef.current = requestAnimationFrame(draw)
+      }
     }
 
     draw()

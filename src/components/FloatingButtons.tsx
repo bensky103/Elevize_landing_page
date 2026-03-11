@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { useLanguage } from '../i18n/context'
 
-const WA_NUMBER = import.meta.env.VITE_WA_NUMBER as string
+const WA_NUMBER = import.meta.env.VITE_WA_NUMBER as string | undefined
 
 export default function FloatingButtons() {
   const { t } = useLanguage()
@@ -62,15 +62,16 @@ export default function FloatingButtons() {
             {/* WhatsApp */}
             <motion.a
               key="wa"
-              href={`https://wa.me/${WA_NUMBER}?text=${WA_MESSAGE}`}
+              href={WA_NUMBER ? `https://wa.me/${WA_NUMBER}?text=${WA_MESSAGE}` : '#'}
               target="_blank"
               rel="noopener noreferrer"
               initial={{ opacity: 0, y: 16, scale: 0.85 }}
               animate={{ opacity: 1, y: 0, scale: 1 }}
               exit={{ opacity: 0, y: 16, scale: 0.85 }}
+              whileHover={{ scale: 1.08 }}
               transition={{ duration: 0.25, delay: 0.05, ease: [0.16, 1, 0.3, 1] }}
               aria-label={t.floating.wa}
-              className="w-10 h-10 sm:w-12 sm:h-12 rounded-full flex items-center justify-center transition-all duration-300"
+              className="w-10 h-10 sm:w-12 sm:h-12 rounded-full flex items-center justify-center"
               style={{
                 background: 'rgba(37,211,102,0.12)',
                 border: '1px solid rgba(37,211,102,0.3)',
@@ -79,16 +80,12 @@ export default function FloatingButtons() {
                 boxShadow: '0 4px 20px rgba(0,0,0,0.3)',
               }}
               onMouseEnter={(e) => {
-                const el = e.currentTarget
-                el.style.background = 'rgba(37,211,102,0.2)'
-                el.style.boxShadow = '0 0 24px rgba(37,211,102,0.3), 0 4px 20px rgba(0,0,0,0.3)'
-                el.style.transform = 'scale(1.08)'
+                e.currentTarget.style.background = 'rgba(37,211,102,0.2)'
+                e.currentTarget.style.boxShadow = '0 0 24px rgba(37,211,102,0.3), 0 4px 20px rgba(0,0,0,0.3)'
               }}
               onMouseLeave={(e) => {
-                const el = e.currentTarget
-                el.style.background = 'rgba(37,211,102,0.12)'
-                el.style.boxShadow = '0 4px 20px rgba(0,0,0,0.3)'
-                el.style.transform = 'scale(1)'
+                e.currentTarget.style.background = 'rgba(37,211,102,0.12)'
+                e.currentTarget.style.boxShadow = '0 4px 20px rgba(0,0,0,0.3)'
               }}
             >
               <WhatsAppIcon />

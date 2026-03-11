@@ -55,9 +55,9 @@ export default function Footer() {
         <motion.div
           initial={{ opacity: 0, y: 12 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: false }}
+          viewport={{ once: true }}
           transition={{ duration: 0.4 }}
-          className="flex flex-col md:flex-row items-center justify-between gap-8"
+          className="flex flex-col md:grid md:grid-cols-[1fr_auto_1fr] items-center gap-8"
         >
           {/* Logo + tagline */}
           <div className="flex items-center gap-3">
@@ -102,7 +102,7 @@ export default function Footer() {
 
           {/* Copyright */}
           <p
-            className="text-sm"
+            className="text-sm md:text-end"
             style={{ fontFamily: 'var(--font-mono)', color: 'rgba(255,255,255,0.28)' }}
           >
             © {new Date().getFullYear()} Elevize

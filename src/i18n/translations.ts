@@ -22,7 +22,7 @@ export const translations = {
       badge: 'פתרונות תוכנה',
       headlineWords: ['בנו', 'מה', 'שאחרים', 'לא יכולים.'],
       subline:
-        'אנחנו הופכים רעיונות שאפתניים למציאות ברמת פרודקשן — אוטומציות מותאמות, סוכני AI ותוכנה שנבנית בדיוק לצרכים שלכם.',
+        'אנחנו הופכים רעיונות שאפתניים למציאות ברמת פרודקשן: אוטומציות מותאמות, סוכני AI ותוכנה שנבנית בדיוק לצרכים שלכם.',
       subwords: ['אוטומציות', '·', 'סוכני AI', '·', 'תוכנה מותאמת', '·', 'כל דבר'],
       ctaStart: 'התחל פרויקט',
       ctaWork: 'צפה בעבודות',
@@ -46,7 +46,7 @@ export const translations = {
         {
           label: 'תוכנה מותאמת אישית',
           description:
-            'אפליקציות פול-סטאק לפי המפרט המדויק שלכם. דשבורדים, כלים פנימיים, מוצרי SaaS, אינטגרציות — קוד נקי, ברמת פרודקשן.',
+            'אפליקציות פול-סטאק לפי המפרט המדויק שלכם. דשבורדים, כלים פנימיים, מוצרי SaaS, אינטגרציות. קוד נקי, ברמת פרודקשן.',
         },
         {
           label: 'כל רעיון שיש לך',
@@ -58,14 +58,14 @@ export const translations = {
     projects: {
       tag: '03 / פרויקטים',
       heading: 'מה שיצרנו',
-      subline: 'דוגמה ממה שבנינו. כל פרויקט שונה — האיכות אף פעם לא.',
+      subline: 'דוגמה ממה שבנינו. כל פרויקט שונה. האיכות אף פעם לא.',
       liveStatus: 'חי',
       nextStatus: 'הבא?',
       items: [
         {
           title: 'מנוע אוטומציה לידים',
           description:
-            'מערכת לכידה ונתוב לידים מקצה לקצה המשלבת טפסי ווב, לוחות Monday.com והתראות SMS של Twilio — ללא התערבות ידנית.',
+            'מערכת לכידה ונתוב לידים מקצה לקצה המשלבת טפסי ווב, לוחות Monday.com והתראות SMS של Twilio. ללא התערבות ידנית.',
         },
         {
           title: 'סוכן תמיכה AI',
@@ -80,7 +80,7 @@ export const translations = {
         {
           title: 'הפרויקט הבא שלך',
           description:
-            'יש לך בעיה שתוכנה יכולה לפתור? נהפוך אותה למערכת פרודקשן שעובדת — בדיוק כפי שאתה צריך.',
+            'יש לך בעיה שתוכנה יכולה לפתור? נהפוך אותה למערכת פרודקשן שעובדת, בדיוק כפי שאתה צריך.',
         },
       ],
     },
@@ -89,7 +89,7 @@ export const translations = {
       heading1: 'מוכנים לבנות',
       heading2: 'משהו אמיתי?',
       subline:
-        'ספרו לנו על מה אתם עובדים. נחזור אליכם תוך 24 שעות עם תשובה ישירה — ללא שטויות, ללא פיץ׳ מכירות.',
+        'ספרו לנו על מה אתם עובדים. נחזור אליכם תוך 24 שעות עם תשובה ישירה. ללא שטויות, ללא פיץ׳ מכירות.',
       chatLabel: 'או שוחחו ישירות',
       wa: 'כתבו לנו בוואטסאפ',
       fields: {
@@ -116,7 +116,7 @@ export const translations = {
     about: {
       tag: '04 / אודות',
       heading: 'מפתחים שבונים דברים שעובדים',
-      body: 'אנחנו צוות קטן של מהנדסי תוכנה ומומחי AI. לא חברת ייעוץ, לא סוכנות דיגיטל — מפתחים שמעדיפים קוד נקי על שקפים יפים.',
+      body: 'אנחנו צוות קטן של מהנדסי תוכנה ומומחי AI. לא חברת ייעוץ, לא סוכנות דיגיטל. מפתחים שמעדיפים קוד נקי על שקפים יפים.',
       stat1Value: '5+',
       stat1Label: 'שנות ניסיון',
       stat2Value: '20+',
@@ -129,8 +129,8 @@ export const translations = {
       heading: 'איך אנחנו עובדים',
       subline: 'ללא בירוקרטיה, ללא הפתעות. שלבים ברורים מהרעיון לפרודקשן.',
       steps: [
-        { num: '01', title: 'גילוי', desc: 'שיחה אחת. מבינים את הבעיה, הצוות, והמטרה — לפני שמתחילים לבנות.' },
-        { num: '02', title: 'תכנון', desc: 'ארכיטקטורה, היקף, וציר זמן — לפני שנגענו בשורת קוד אחת.' },
+        { num: '01', title: 'גילוי', desc: 'שיחה אחת. מבינים את הבעיה, הצוות, והמטרה. ואז מתחילים לבנות.' },
+        { num: '02', title: 'תכנון', desc: 'ארכיטקטורה, היקף, וציר זמן. לפני שנגענו בשורת קוד אחת.' },
         { num: '03', title: 'בנייה', desc: 'פיתוח מהיר ושקוף. עדכונים שבועים, גישה ישירה לצוות, אפס הפתעות.' },
         { num: '04', title: 'שחרור', desc: 'פריסה, בדיקות, ומסירה. מוודאים שהכל עובד לפני שסוגרים.' },
       ],
@@ -140,20 +140,20 @@ export const translations = {
       heading: 'מה אומרים עלינו',
       note: '',
       items: [
-        { name: 'דניאל לוי', role: 'מנכ״ל, חברת נדל״ן', quote: 'Elevize בנו לנו מערכת ניהול לידים תוך שבועיים. מה שלקח שעות של עבודה ידנית — עכשיו קורה אוטומטית. החיסכון בזמן הוא עצום.' },
+        { name: 'דניאל לוי', role: 'מנכ״ל, חברת נדל״ן', quote: 'Elevize בנו לנו מערכת ניהול לידים תוך שבועיים. מה שלקח שעות של עבודה ידנית עכשיו קורה אוטומטית. החיסכון בזמן הוא עצום.' },
         { name: 'מיכל כהן', role: 'מנהלת שיווק, סטארטאפ SaaS', quote: 'ביקשנו סוכן AI לתמיכת לקוחות. קיבלנו מערכת שפותרת 80% מהפניות לבד. הצוות שלנו סוף סוף יכול להתמקד בדברים שחשובים.' },
-        { name: 'רועי שמואלי', role: 'יזם, מסחר אלקטרוני', quote: 'הדשבורד שבנו חיבר לראשונה את כל הנתונים שלי — מלאי, הזמנות, תזמון — לתצוגה אחת. פשוט חסך לי עובד שלם.' },
+        { name: 'רועי שמואלי', role: 'יזם, מסחר אלקטרוני', quote: 'הדשבורד שבנו חיבר לראשונה את כל הנתונים שלי: מלאי, הזמנות, תזמון, לתצוגה אחת. פשוט חסך לי עובד שלם.' },
       ],
     },
     faq: {
       tag: '07 / שאלות',
       heading: 'שאלות נפוצות',
       items: [
-        { q: 'כמה זמן לוקח פרויקט טיפוסי?', a: 'תלוי בהיקף — אבל רוב הפרויקטים נמסרים תוך 2–6 שבועות. אוטומציות פשוטות יכולות להיות מוכנות תוך שבוע. תמיד נגדיר ציר זמן ברור לפני שנתחיל.' },
+        { q: 'כמה זמן לוקח פרויקט טיפוסי?', a: 'תלוי בהיקף, אבל רוב הפרויקטים נמסרים תוך 2–6 שבועות. אוטומציות פשוטות יכולות להיות מוכנות תוך שבוע. תמיד נגדיר ציר זמן ברור לפני שנתחיל.' },
         { q: 'האם אתם עובדים מרחוק?', a: 'כן, לחלוטין. עובדים עם לקוחות בכל הארץ ומחוצה לה. כל התקשורת, הדמואים, והאישורים מתנהלים אונליין.' },
         { q: 'מה קורה אחרי שהפרויקט נמסר?', a: 'מספקים אחריות ותמיכה לאחר פריסה. לרוב הפרויקטים מוצעות גם חבילות תחזוקה שוטפת.' },
         { q: 'האם אתם עובדים עם עסקים קטנים?', a: 'כן. חלק גדול מהלקוחות שלנו הם עסקים קטנים ובינוניים. אנחנו מאמינים שיכולות טכנולוגיות מתקדמות לא צריכות להיות בלעדיות לחברות ענק.' },
-        { q: 'האם אתם בונים גם דברים שלא נמצאים ברשימה?', a: 'בהחלט. אם זה יכול להיבנות בתוכנה — אנחנו יכולים לבנות את זה. הביאו לנו את הרעיון הכי אמיץ שלכם.' },
+        { q: 'האם אתם בונים גם דברים שלא נמצאים ברשימה?', a: 'בהחלט. אם זה יכול להיבנות בתוכנה, אנחנו יכולים לבנות את זה. הביאו לנו את הרעיון הכי אמיץ שלכם.' },
       ],
     },
   },
@@ -179,7 +179,7 @@ export const translations = {
       badge: 'Software Solutions',
       headlineWords: ['Build', 'What', 'Others', "Can't."],
       subline:
-        'We turn ambitious ideas into production-grade reality — custom automations, AI agents, and software built exactly to your needs.',
+        'We turn ambitious ideas into production-grade reality. Custom automations, AI agents, and software built exactly to your needs.',
       subwords: ['Automations', '·', 'AI Agents', '·', 'Custom Software', '·', 'Anything'],
       ctaStart: 'Start a Project',
       ctaWork: 'View Our Work',
@@ -215,14 +215,14 @@ export const translations = {
     projects: {
       tag: '03 / Projects',
       heading: "What We've Shipped",
-      subline: "A sample of what we've built. Every project is different — the quality never is.",
+      subline: "A sample of what we've built. Every project is different. The quality never is.",
       liveStatus: 'Live',
       nextStatus: 'Next?',
       items: [
         {
           title: 'Lead Automation Engine',
           description:
-            'End-to-end lead capture and routing system integrating web forms, Monday.com boards, and Twilio SMS notifications — zero manual intervention.',
+            'End-to-end lead capture and routing system integrating web forms, Monday.com boards, and Twilio SMS notifications. Zero manual intervention.',
         },
         {
           title: 'AI Support Agent',
@@ -237,7 +237,7 @@ export const translations = {
         {
           title: 'Your Project Here',
           description:
-            "Got a problem that software can solve? We'll turn it into a production system that actually works — precisely the way you need it.",
+            "Got a problem that software can solve? We'll turn it into a production system that actually works, precisely the way you need it.",
         },
       ],
     },
@@ -246,7 +246,7 @@ export const translations = {
       heading1: 'Ready to build',
       heading2: 'something real?',
       subline:
-        "Tell us what you're working on. We'll respond within 24 hours with a straight answer — no fluff, no sales pitch.",
+        "Tell us what you're working on. We'll respond within 24 hours with a straight answer. No fluff, no sales pitch.",
       chatLabel: 'Or chat directly',
       wa: 'WhatsApp Us',
       fields: {
@@ -273,7 +273,7 @@ export const translations = {
     about: {
       tag: '04 / About',
       heading: 'Developers who build things that work',
-      body: "We're a small team of software engineers and AI specialists. Not a consultancy, not a digital agency — developers who prefer clean code over pretty slides.",
+      body: "We're a small team of software engineers and AI specialists. Not a consultancy, not a digital agency. Developers who prefer clean code over pretty slides.",
       stat1Value: '5+',
       stat1Label: 'Years Experience',
       stat2Value: '20+',
@@ -286,8 +286,8 @@ export const translations = {
       heading: 'How We Work',
       subline: 'No bureaucracy, no surprises. Clear steps from idea to production.',
       steps: [
-        { num: '01', title: 'Discover', desc: 'One conversation. We understand the problem, the team, and the goal — before we start building.' },
-        { num: '02', title: 'Plan', desc: 'Architecture, scope, and timeline — before we touch a single line of code.' },
+        { num: '01', title: 'Discover', desc: 'One conversation. We understand the problem, the team, and the goal. Then we start building.' },
+        { num: '02', title: 'Plan', desc: 'Architecture, scope, and timeline. Before we touch a single line of code.' },
         { num: '03', title: 'Build', desc: 'Fast, transparent development. Weekly updates, direct access to the team, zero surprises.' },
         { num: '04', title: 'Ship', desc: 'Deploy, test, and hand off. We make sure everything works before we close.' },
       ],
@@ -299,14 +299,14 @@ export const translations = {
       items: [
         { name: 'Daniel Levi', role: 'CEO, Real Estate Firm', quote: 'Elevize built our lead management system in two weeks. What used to take hours of manual work now happens automatically. The time savings are enormous.' },
         { name: 'Michal Cohen', role: 'Marketing Manager, SaaS Startup', quote: 'We asked for an AI customer support agent. We got a system that resolves 80% of requests on its own. Our team can finally focus on what actually matters.' },
-        { name: 'Roee Shmueli', role: 'Entrepreneur, E-commerce', quote: 'The dashboard they built connected all my data — inventory, orders, scheduling — into one view for the first time. It simply replaced a full-time employee.' },
+        { name: 'Roee Shmueli', role: 'Entrepreneur, E-commerce', quote: 'The dashboard they built connected all my data for the first time: inventory, orders, scheduling, all in one view. It basically replaced a full-time employee.' },
       ],
     },
     faq: {
       tag: '07 / FAQ',
       heading: 'Frequently Asked Questions',
       items: [
-        { q: 'How long does a typical project take?', a: "Depends on scope — but most projects are delivered within 2–6 weeks. Simple automations can be ready in a week. We always define a clear timeline before we start." },
+        { q: 'How long does a typical project take?', a: "Depends on scope, but most projects are delivered within 2–6 weeks. Simple automations can be ready in a week. We always define a clear timeline before we start." },
         { q: 'Do you work remotely?', a: "Yes, fully. We work with clients across Israel and internationally. All communication, demos, and approvals happen online." },
         { q: 'What happens after the project is delivered?', a: 'We provide post-deployment warranty and support. Ongoing maintenance packages are available for most projects.' },
         { q: 'Do you work with small businesses?', a: "Yes. A large portion of our clients are SMBs. We believe advanced tech capabilities shouldn't be exclusive to large enterprises." },
@@ -336,7 +336,7 @@ export const translations = {
       badge: 'Программные решения',
       headlineWords: ['Строим', 'то,', 'что', 'другие не могут.'],
       subline:
-        'Мы превращаем амбициозные идеи в продакшн-решения — кастомные автоматизации, AI-агенты и ПО под ваши задачи.',
+        'Мы превращаем амбициозные идеи в продакшн-решения. Кастомные автоматизации, AI-агенты и ПО под ваши задачи.',
       subwords: ['Автоматизации', '·', 'AI-агенты', '·', 'Кастомный софт', '·', 'Что угодно'],
       ctaStart: 'Начать проект',
       ctaWork: 'Наши работы',
@@ -360,26 +360,26 @@ export const translations = {
         {
           label: 'Кастомное ПО',
           description:
-            'Full-stack приложения по вашему точному ТЗ. Дашборды, внутренние инструменты, SaaS-продукты, интеграции — чистый код, продакшн-уровень.',
+            'Full-stack приложения по вашему точному ТЗ. Дашборды, внутренние инструменты, SaaS-продукты, интеграции. Чистый код, продакшн-уровень.',
         },
         {
           label: 'Что угодно',
           description:
-            'Если это можно сделать с помощью ПО, мы это сделаем. Приносите самую смелую идею — спроектируем и реализуем с той же точностью.',
+            'Если это можно сделать с помощью ПО, мы это сделаем. Приносите самую смелую идею, спроектируем и реализуем с той же точностью.',
         },
       ],
     },
     projects: {
       tag: '03 / Проекты',
       heading: 'Что мы сделали',
-      subline: 'Примеры нашей работы. Каждый проект уникален — качество неизменно.',
+      subline: 'Примеры нашей работы. Каждый проект уникален. Качество неизменно.',
       liveStatus: 'Запущен',
       nextStatus: 'Далее?',
       items: [
         {
           title: 'Движок автоматизации лидов',
           description:
-            'Сквозная система захвата и маршрутизации лидов, интегрирующая веб-формы, доски Monday.com и SMS-уведомления Twilio — без ручного вмешательства.',
+            'Сквозная система захвата и маршрутизации лидов, интегрирующая веб-формы, доски Monday.com и SMS-уведомления Twilio. Без ручного вмешательства.',
         },
         {
           title: 'AI-агент поддержки',
@@ -403,7 +403,7 @@ export const translations = {
       heading1: 'Готовы создать',
       heading2: 'что-то реальное?',
       subline:
-        'Расскажите, над чем работаете. Ответим в течение 24 часов — без воды и продажного питча.',
+        'Расскажите, над чем работаете. Ответим в течение 24 часов. Без воды и продажного питча.',
       chatLabel: 'Или напишите напрямую',
       wa: 'Написать в WhatsApp',
       fields: {
@@ -430,7 +430,7 @@ export const translations = {
     about: {
       tag: '04 / О нас',
       heading: 'Разработчики, которые создают то, что работает',
-      body: 'Мы небольшая команда инженеров и AI-специалистов. Не консалтинг, не агентство — разработчики, которые предпочитают чистый код красивым презентациям.',
+      body: 'Мы небольшая команда инженеров и AI-специалистов. Не консалтинг, не агентство. Разработчики, которые предпочитают чистый код красивым презентациям.',
       stat1Value: '5+',
       stat1Label: 'Лет опыта',
       stat2Value: '20+',
@@ -443,8 +443,8 @@ export const translations = {
       heading: 'Как мы работаем',
       subline: 'Без бюрократии, без сюрпризов. Чёткие шаги от идеи до продакшна.',
       steps: [
-        { num: '01', title: 'Изучение', desc: 'Один звонок. Понимаем задачу, команду и цель — до того, как начнём строить.' },
-        { num: '02', title: 'Планирование', desc: 'Архитектура, объём и сроки — до того, как написана первая строка кода.' },
+        { num: '01', title: 'Изучение', desc: 'Один звонок. Понимаем задачу, команду и цель. Потом начинаем строить.' },
+        { num: '02', title: 'Планирование', desc: 'Архитектура, объём и сроки. До того, как написана первая строка кода.' },
         { num: '03', title: 'Разработка', desc: 'Быстрая и прозрачная разработка. Еженедельные обновления, прямой доступ к команде, ноль сюрпризов.' },
         { num: '04', title: 'Запуск', desc: 'Деплой, тестирование и передача. Убеждаемся, что всё работает, прежде чем закрыть задачу.' },
       ],
@@ -456,18 +456,18 @@ export const translations = {
       items: [
         { name: 'Даниэль Леви', role: 'CEO, риэлторская компания', quote: 'Elevize построили нашу систему управления лидами за две недели. То, что занимало часы ручной работы, теперь происходит автоматически. Экономия времени огромная.' },
         { name: 'Михаль Коэн', role: 'Директор по маркетингу, SaaS-стартап', quote: 'Мы попросили AI-агента для поддержки клиентов. Получили систему, которая решает 80% обращений самостоятельно. Наша команда наконец может сосредоточиться на важном.' },
-        { name: 'Рои Шмуэли', role: 'Предприниматель, e-commerce', quote: 'Дашборд, который они построили, впервые объединил все мои данные — склад, заказы, расписание — в одном окне. Он просто заменил одного сотрудника.' },
+        { name: 'Рои Шмуэли', role: 'Предприниматель, e-commerce', quote: 'Дашборд, который они построили, впервые объединил все мои данные в одном окне: склад, заказы, расписание. Он просто заменил одного сотрудника.' },
       ],
     },
     faq: {
       tag: '07 / FAQ',
       heading: 'Часто задаваемые вопросы',
       items: [
-        { q: 'Сколько времени занимает типичный проект?', a: 'Зависит от объёма — но большинство проектов сдаются за 2–6 недель. Простые автоматизации могут быть готовы за неделю. Мы всегда определяем чёткие сроки до начала работы.' },
+        { q: 'Сколько времени занимает типичный проект?', a: 'Зависит от объёма, но большинство проектов сдаются за 2–6 недель. Простые автоматизации могут быть готовы за неделю. Мы всегда определяем чёткие сроки до начала работы.' },
         { q: 'Вы работаете удалённо?', a: 'Да, полностью. Работаем с клиентами по всему Израилю и за рубежом. Всё общение, демо и согласования проходят онлайн.' },
         { q: 'Что происходит после сдачи проекта?', a: 'Мы предоставляем гарантию и поддержку после деплоя. Для большинства проектов доступны пакеты постоянного обслуживания.' },
         { q: 'Работаете ли вы с малым бизнесом?', a: 'Да. Большая часть наших клиентов — малый и средний бизнес. Мы считаем, что передовые технологии не должны быть доступны только крупным компаниям.' },
-        { q: 'Строите ли вы то, чего нет в вашем списке услуг?', a: 'Безусловно. Если это можно построить с помощью ПО — мы это построим. Приносите самую смелую идею.' },
+        { q: 'Строите ли вы то, чего нет в вашем списке услуг?', a: 'Безусловно. Если это можно построить с помощью ПО, мы это построим. Приносите самую смелую идею.' },
       ],
     },
   },

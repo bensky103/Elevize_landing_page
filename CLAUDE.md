@@ -47,6 +47,19 @@ Vercel settings: root directory = repo root, build command = `npm run build`, ou
 - **Sub-pages** — add `react-router-dom` if needed; Vercel handles SPA routing natively
 - **Recommend against**: adding a backend to this repo; keep automations separate
 
+## Navbar Conventions
+
+- Always has `dir="ltr"` on the `<header>` element — never inherits RTL from the page
+- Hebrew (`lang === 'he'`): nav links render in **reverse** order (`[...navLinks].reverse()`) so שאלות is leftmost, שירותים rightmost
+- Desktop nav uses `grid-cols-[1fr_auto_1fr]` for centering — do NOT use `absolute left-1/2` (breaks with wide right-side content)
+
+## Typography Standards
+
+- Body and card description text: `text-base` (16px+)
+- `text-sm` / `text-xs` reserved for UI chrome only: tags, badges, form labels, nav links, mono labels
+- Base font-size: `17px` on `html` element (set in `index.css`)
+
 ## Workflow Notes
 
 - When user proposes an architectural decision that differs from best practice, flag it and suggest the standard approach before implementing
+- For visual/layout bugs: identify root cause and report findings before touching code; implement only after user approves the diagnosis

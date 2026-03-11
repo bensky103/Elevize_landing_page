@@ -44,7 +44,7 @@ export default function Projects() {
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: false, margin: '-80px' }}
+          viewport={{ once: true, margin: '-80px' }}
           transition={{ duration: 0.5 }}
           className="mb-10 md:mb-16 flex flex-col gap-3 items-center text-center"
         >
@@ -95,7 +95,7 @@ function ProjectCard({ project, index }: { project: Project; index: number }) {
       custom={index}
       initial="hidden"
       whileInView="visible"
-      viewport={{ once: false, margin: '-60px' }}
+      viewport={{ once: true, margin: '-60px' }}
       variants={cardVariants}
       className="glass-card group flex flex-col"
       style={{

@@ -23,7 +23,7 @@ export default function FAQ() {
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: false, margin: '-80px' }}
+          viewport={{ once: true, margin: '-80px' }}
           transition={{ duration: 0.5 }}
           className="mb-12 flex flex-col gap-3 items-center text-center"
         >
@@ -45,7 +45,7 @@ export default function FAQ() {
               key={i}
               initial={{ opacity: 0, y: 16 }}
               whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: false, margin: '-40px' }}
+              viewport={{ once: true, margin: '-40px' }}
               transition={{ delay: i * 0.08, duration: 0.45, ease: [0.16, 1, 0.3, 1] }}
             >
               <div

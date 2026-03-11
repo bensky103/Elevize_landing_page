@@ -2,8 +2,8 @@ import { useState, type FormEvent } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { useLanguage } from '../i18n/context'
 
-const WA_NUMBER = import.meta.env.VITE_WA_NUMBER as string
-const FORMSPREE_ID = import.meta.env.VITE_FORMSPREE_ID as string
+const WA_NUMBER = import.meta.env.VITE_WA_NUMBER as string | undefined
+const FORMSPREE_ID = import.meta.env.VITE_FORMSPREE_ID as string | undefined
 
 type FormState = 'idle' | 'submitting' | 'success' | 'error'
 
@@ -14,12 +14,11 @@ export default function Contact() {
   const [email, setEmail] = useState('')
   const [message, setMessage] = useState('')
   const [state, setState] = useState<FormState>('idle')
-  const [errorMsg, setErrorMsg] = useState('')
 
   const handleSubmit = async (e: FormEvent) => {
     e.preventDefault()
+    if (!FORMSPREE_ID) { setState('error'); return }
     setState('submitting')
-    setErrorMsg('')
 
     try {
       const res = await fetch(`https://formspree.io/f/${FORMSPREE_ID}`, {
@@ -30,9 +29,11 @@ export default function Contact() {
 
       if (!res.ok) throw new Error('Server error')
       setState('success')
+      setName('')
+      setEmail('')
+      setMessage('')
     } catch {
       setState('error')
-      setErrorMsg(t.contact.error)
     }
   }
 
@@ -57,7 +58,7 @@ export default function Contact() {
           <motion.div
             initial={{ opacity: 0, x: xLeft }}
             whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: false, margin: '-80px' }}
+            viewport={{ once: true, margin: '-80px' }}
             transition={{ duration: 0.55, ease: [0.16, 1, 0.3, 1] }}
             className="flex flex-col gap-6"
           >
@@ -96,7 +97,7 @@ export default function Contact() {
                 {t.contact.chatLabel}
               </p>
               <a
-                href={`https://wa.me/${WA_NUMBER}?text=${WA_MESSAGE}`}
+                href={WA_NUMBER ? `https://wa.me/${WA_NUMBER}?text=${WA_MESSAGE}` : '#'}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex items-center gap-3 px-5 py-3 rounded-xl w-fit transition-all duration-300 group"
@@ -118,8 +119,8 @@ export default function Contact() {
                 <span className="text-sm font-medium" style={{ fontFamily: 'var(--font-body)' }}>
                   {t.contact.wa}
                 </span>
-                <span className="text-xs ml-auto opacity-50 group-hover:opacity-80 transition-opacity" style={{ fontFamily: 'var(--font-mono)' }}>
-                  →
+                <span className="text-xs ms-auto opacity-50 group-hover:opacity-80 transition-opacity" style={{ fontFamily: 'var(--font-mono)' }}>
+                  {t.arrow}
                 </span>
               </a>
             </div>
@@ -129,7 +130,7 @@ export default function Contact() {
           <motion.div
             initial={{ opacity: 0, x: xRight }}
             whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: false, margin: '-80px' }}
+            viewport={{ once: true, margin: '-80px' }}
             transition={{ duration: 0.55, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
           >
             <AnimatePresence mode="wait">
@@ -196,7 +197,7 @@ export default function Contact() {
 
                   {state === 'error' && (
                     <p className="text-sm text-red-400" style={{ fontFamily: 'var(--font-mono)', fontSize: '0.75rem' }}>
-                      {errorMsg}
+                      {t.contact.error}
                     </p>
                   )}
 

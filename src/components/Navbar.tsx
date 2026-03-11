@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react'
 import { motion, useScroll, useTransform } from 'framer-motion'
 import { useLanguage } from '../i18n/context'
 
-const WA_NUMBER = import.meta.env.VITE_WA_NUMBER as string
+const WA_NUMBER = import.meta.env.VITE_WA_NUMBER as string | undefined
 
 export default function Navbar() {
   const { t, lang, setLang } = useLanguage()
@@ -75,7 +75,7 @@ export default function Navbar() {
         {/* Right-side controls — WhatsApp CTA + mobile hamburger grouped together */}
         <div className="flex items-center gap-2 justify-end">
           <a
-            href={`https://wa.me/${WA_NUMBER}?text=${WA_MESSAGE}`}
+            href={WA_NUMBER ? `https://wa.me/${WA_NUMBER}?text=${WA_MESSAGE}` : '#'}
             target="_blank"
             rel="noopener noreferrer"
             className="flex items-center gap-2 px-3 md:px-4 py-1.5 rounded-full text-sm font-medium transition-all duration-300 whitespace-nowrap"
@@ -163,7 +163,7 @@ export default function Navbar() {
         }}
       >
         <div className="px-6 py-4 flex flex-col gap-4">
-          {navLinks.map((link) => (
+          {displayLinks.map((link) => (
             <a
               key={link.href}
               href={link.href}
@@ -175,7 +175,7 @@ export default function Navbar() {
             </a>
           ))}
           <a
-            href={`https://wa.me/${WA_NUMBER}?text=${WA_MESSAGE}`}
+            href={WA_NUMBER ? `https://wa.me/${WA_NUMBER}?text=${WA_MESSAGE}` : '#'}
             target="_blank"
             rel="noopener noreferrer"
             onClick={() => setMenuOpen(false)}

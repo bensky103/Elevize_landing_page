@@ -131,7 +131,7 @@ export default function Services() {
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: false, margin: '-80px' }}
+          viewport={{ once: true, margin: '-80px' }}
           transition={{ duration: 0.5 }}
           className="mb-10 md:mb-16 flex flex-col gap-3 items-center text-center"
         >
@@ -179,7 +179,7 @@ function ServiceCard({ service, index }: { service: ServiceItem; index: number }
       custom={index}
       initial="hidden"
       whileInView="visible"
-      viewport={{ once: false, margin: '-60px' }}
+      viewport={{ once: true, margin: '-60px' }}
       variants={cardVariants}
       className="glass-card p-7 sm:p-9 flex flex-col gap-5 sm:gap-6 relative group"
       style={{

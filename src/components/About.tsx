@@ -32,7 +32,7 @@ export default function About() {
           <motion.div
             initial={{ opacity: 0, x: xLeft }}
             whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: false, margin: '-80px' }}
+            viewport={{ once: true, margin: '-80px' }}
             transition={{ duration: 0.55, ease: [0.16, 1, 0.3, 1] }}
             className="flex flex-col gap-6"
           >
@@ -60,7 +60,7 @@ export default function About() {
           <motion.div
             initial={{ opacity: 0, x: xRight }}
             whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: false, margin: '-80px' }}
+            viewport={{ once: true, margin: '-80px' }}
             transition={{ duration: 0.55, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
             className="grid grid-cols-3 gap-4"
           >
@@ -69,7 +69,7 @@ export default function About() {
                 key={i}
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: false }}
+                viewport={{ once: true }}
                 transition={{ delay: 0.2 + i * 0.1, duration: 0.5, ease: [0.16, 1, 0.3, 1] }}
                 className="glass-card p-5 sm:p-6 flex flex-col items-center text-center gap-2"
               >
