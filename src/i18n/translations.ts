@@ -73,9 +73,9 @@ export const translations = {
             'סוכן שיחה רב-סבבי עם RAG על תיעוד מוצרים, המסוגל לפתור 80% מכרטיסי התמיכה באופן אוטונומי לפני הסלמה.',
         },
         {
-          title: 'דשבורד תפעולי',
+          title: 'מערכת ניהול מטבח',
           description:
-            'דשבורד תפעולי בזמן אמת המחבר מלאי, תזמון וביצועי צוות לתצוגה מאוחדת אחת עם התראות חיות.',
+            'מערכת ניהול הזמנות למטבח בזמן אמת. שיבוץ מנות לטבחים, מעקב חי עם SSE ומנוע תרגום AI מובנה. אפס תקשורת ידנית.',
         },
         {
           title: 'הפרויקט הבא שלך',
@@ -230,9 +230,9 @@ export const translations = {
             'Multi-turn conversational agent with RAG over product docs, capable of resolving 80% of support tickets autonomously before escalating.',
         },
         {
-          title: 'Operations Dashboard',
+          title: 'Kitchen Order Management',
           description:
-            'Real-time internal ops dashboard connecting inventory, scheduling, and team performance into a single unified view with live alerts.',
+            'Real-time kitchen order system for catering operations. Chefs assign dishes to cooks, live tracking via SSE and a built-in AI translation engine. Zero verbal coordination.',
         },
         {
           title: 'Your Project Here',
@@ -387,9 +387,9 @@ export const translations = {
             'Многоходовой разговорный агент с RAG по документации продукта, способный автономно решить 80% тикетов поддержки до эскалации.',
         },
         {
-          title: 'Операционный дашборд',
+          title: 'Управление заказами кухни',
           description:
-            'Дашборд реального времени, объединяющий склад, расписание и производительность команды в едином представлении с живыми алертами.',
+            'Система управления заказами кухни в реальном времени. Шефы назначают блюда поварам, живое отслеживание через SSE и встроенный AI-движок перевода. Ноль ручной координации.',
         },
         {
           title: 'Ваш проект здесь',

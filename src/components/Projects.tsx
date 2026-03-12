@@ -1,4 +1,5 @@
-import { motion } from 'framer-motion'
+import { useState, useEffect } from 'react'
+import { motion, AnimatePresence } from 'framer-motion'
 import { useLanguage } from '../i18n/context'
 
 const cardVariants = {
@@ -13,7 +14,7 @@ const cardVariants = {
 const projectsMeta = [
   { image: '/projects/lead-automation.gif', gradient: 'linear-gradient(135deg, #4c1d95 0%, #1e1b4b 50%, #0f172a 100%)', accent: 'purple' as const, isPlaceholder: false, tags: ['Monday.com', 'Twilio', 'FastAPI', 'Automation'] },
   { image: '/projects/ai-support.gif',      gradient: 'linear-gradient(135deg, #0c4a6e 0%, #0f172a 50%, #1e1b4b 100%)', accent: 'cyan' as const,   isPlaceholder: false, tags: ['OpenAI', 'LangChain', 'RAG', 'React'] },
-  { image: '/projects/ops-dashboard.gif',   gradient: 'linear-gradient(135deg, #312e81 0%, #0f172a 50%, #064e3b 100%)', accent: 'purple' as const, isPlaceholder: false, tags: ['React', 'TypeScript', 'FastAPI', 'SSE'] },
+  { image: ['/projects/picnic_chef_screenshot.png', '/projects/watch_page_screenshot.png'], gradient: 'linear-gradient(135deg, #312e81 0%, #0f172a 50%, #064e3b 100%)', accent: 'purple' as const, isPlaceholder: false, tags: ['React', 'FastAPI', 'Real-Time SSE', 'OpenAI'] },
   { image: null,                            gradient: 'linear-gradient(135deg, #1c1917 0%, #0f172a 60%, #1c1917 100%)', accent: 'cyan' as const,   isPlaceholder: true,  tags: ['Your Stack', 'Your Problem', 'Our Solution'] },
 ]
 
@@ -77,7 +78,7 @@ export default function Projects() {
 }
 
 type Project = {
-  image: string | null
+  image: string | string[] | null
   gradient: string
   accent: 'purple' | 'cyan'
   isPlaceholder: boolean
@@ -87,8 +88,38 @@ type Project = {
   status: string
 }
 
+function RotatingImage({ images, alt }: { images: string[]; alt: string }) {
+  const [index, setIndex] = useState(0)
+
+  useEffect(() => {
+    if (images.length <= 1) return
+    const id = setInterval(() => setIndex((i) => (i + 1) % images.length), 4000)
+    return () => clearInterval(id)
+  }, [images.length])
+
+  return (
+    <AnimatePresence mode="wait">
+      <motion.img
+        key={images[index]}
+        src={images[index]}
+        alt={alt}
+        className="absolute inset-0 w-full h-full object-contain p-3 sm:p-4"
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        exit={{ opacity: 0 }}
+        transition={{ duration: 0.6, ease: 'easeInOut' }}
+      />
+    </AnimatePresence>
+  )
+}
+
 function ProjectCard({ project, index }: { project: Project; index: number }) {
   const isPurple = project.accent === 'purple'
+  const images = Array.isArray(project.image)
+    ? project.image
+    : project.image
+    ? [project.image]
+    : null
 
   return (
     <motion.div
@@ -109,16 +140,18 @@ function ProjectCard({ project, index }: { project: Project; index: number }) {
     >
       {/* Thumbnail */}
       <div
-        className="relative h-36 sm:h-44 flex-shrink-0 overflow-hidden"
-        style={!project.image ? { background: project.gradient } : undefined}
+        className="relative h-52 sm:h-64 flex-shrink-0 overflow-hidden"
+        style={{ background: project.gradient }}
       >
-        {project.image && (
+        {images && images.length > 1 ? (
+          <RotatingImage images={images} alt={project.title} />
+        ) : images ? (
           <img
-            src={project.image}
+            src={images[0]}
             alt={project.title}
-            className="w-full h-full object-cover"
+            className="w-full h-full object-contain p-3 sm:p-4"
           />
-        )}
+        ) : null}
         {/* Grid overlay on thumbnail */}
         <div
           className="absolute inset-0 opacity-20"
