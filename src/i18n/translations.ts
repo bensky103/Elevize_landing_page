@@ -20,23 +20,23 @@ export const translations = {
     },
     hero: {
       badge: 'פתרונות תוכנה',
-      headlineWords: ['בנו', 'מה', 'שאחרים', 'לא יכולים.'],
+      headlineWords: ['הפרטנרים שלכם', 'לייעול תהליכי עבודה', 'בעזרת AI.'],
       subline:
-        'אנחנו הופכים רעיונות שאפתניים למציאות ברמת פרודקשן: אוטומציות מותאמות, סוכני AI ותוכנה שנבנית בדיוק לצרכים שלכם.',
+        'הזמן להפוך אתגרים תפעוליים ליתרון תחרותי. אנחנו בונים אוטומציות וסוכני AI שלוקחים את העסק שלכם לעידן הבא.',
       subwords: ['אוטומציות', '·', 'סוכני AI', '·', 'תוכנה מותאמת', '·', 'כל דבר'],
-      ctaStart: 'התחל פרויקט',
-      ctaWork: 'צפה בעבודות',
+      ctaStart: 'לשיחת יעוץ בחינם',
+      ctaWork: 'צפה בפרוייקטים',
     },
     services: {
       tag: '01 / שירותים',
-      heading: 'מה אנחנו בונים',
+      heading: 'הפתרונות שייקחו אתכם לשם',
       subline:
-        'אנחנו לא עושים עבודה שבלונית. כל התקשרות מתחילה בהבנת הבעיה שלך ומסתיימת בפתרון שעובד באמת.',
+        'מנתחים את הצרכים, מפתחים פתרונות בהתאמה אישית, ומטמיעים אותם אצלכם בעסק.',
       items: [
         {
           label: 'אוטומציות מותאמות אישית',
           description:
-            'אוטומציה של תהליכי עבודה מקצה לקצה שמבטלת את הידני. עוצמה ברמת Zapier ללא המגבלות, נבנית ספציפית לתהליכים שלכם.',
+            'אוטומציה של תהליכי עבודה מקצה לקצה שמבטלת את הצורך במגע יד אדם. אנחנו בונים זרימת עבודה חכמה שתפורה ספציפית לצרכים ולמערכות שלכם.',
         },
         {
           label: 'פיתוח סוכני AI',
@@ -46,19 +46,19 @@ export const translations = {
         {
           label: 'תוכנה מותאמת אישית',
           description:
-            'אפליקציות פול-סטאק לפי המפרט המדויק שלכם. דשבורדים, כלים פנימיים, מוצרי SaaS, אינטגרציות. קוד נקי, ברמת פרודקשן.',
+            'אפליקציות פול-סטאק לפי המפרט המדויק שלכם. דשבורדים, כלים פנימיים, מוצרי SaaS, אינטגרציות.',
         },
         {
           label: 'כל רעיון שיש לך',
           description:
-            'אם אפשר לבנות את זה בתוכנה, אנחנו נבנה את זה. הביאו את הרעיון הכי אמיץ שלכם ואנחנו נתכנן ונשלח אותו באותה רמת דיוק.',
+            'כל עסק עובד אחרת, ולפעמים הכלים הקיימים פשוט לא מספיקים. פיתוח כלי עבודה פנימיים, אינטגרציות מורכבות ומערכות ניהול מאפס, בדיוק לפי המידות והדרישות שלכם.',
         },
       ],
     },
     projects: {
       tag: '03 / פרויקטים',
-      heading: 'מה שיצרנו',
-      subline: 'דוגמה ממה שבנינו. כל פרויקט שונה. האיכות אף פעם לא.',
+      heading: 'יצירות המופת שלנו',
+      subline: '',
       liveStatus: 'חי',
       nextStatus: 'הבא?',
       items: [
@@ -86,10 +86,10 @@ export const translations = {
     },
     contact: {
       tag: '06 / צור קשר',
-      heading1: 'מוכנים לבנות',
-      heading2: 'משהו אמיתי?',
+      heading1: 'רוצים לשמוע עוד?',
+      heading2: '',
       subline:
-        'ספרו לנו על מה אתם עובדים. נחזור אליכם תוך 24 שעות עם תשובה ישירה. ללא שטויות, ללא פיץ׳ מכירות.',
+        'קבעו שיחת התאמה בחינם, ספרו לנו על הבעייות שיש לכם בעסק ונראה ביחד איך נוכל לעזור.',
       chatLabel: 'או שוחחו ישירות',
       wa: 'כתבו לנו בוואטסאפ',
       fields: {
@@ -100,7 +100,7 @@ export const translations = {
         message: 'מה אתם בונים?',
         messagePlaceholder: 'תארו את הפרויקט או הרעיון שלכם...',
       },
-      send: 'שלח הודעה',
+      send: 'אני רוצה שיחת התאמה בחינם',
       sending: 'שולח...',
       successTitle: 'ההודעה התקבלה',
       successSub: 'נחזור אליכם תוך 24 שעות. מצפים לשמוע.',
@@ -115,34 +115,34 @@ export const translations = {
     },
     about: {
       tag: '04 / אודות',
-      heading: 'מפתחים שבונים דברים שעובדים',
-      body: 'אנחנו צוות קטן של מהנדסי תוכנה ומומחי AI. לא חברת ייעוץ, לא סוכנות דיגיטל. מפתחים שמעדיפים קוד נקי על שקפים יפים.',
-      stat1Value: '5+',
+      heading: 'השילוב המדויק בין הבנה עסקית לכתיבת קוד',
+      body: '',
+      stat1Value: '7+',
       stat1Label: 'שנות ניסיון',
-      stat2Value: '20+',
-      stat2Label: 'פרויקטים שנמסרו',
-      stat3Value: '24h',
-      stat3Label: 'זמן תגובה',
+      stat2Value: '56',
+      stat2Label: 'פרוייקטים שנמסרו',
+      stat3Value: '100%',
+      stat3Label: 'מחויבות לעסק שלכם',
     },
     process: {
       tag: '02 / תהליך',
-      heading: 'איך אנחנו עובדים',
-      subline: 'ללא בירוקרטיה, ללא הפתעות. שלבים ברורים מהרעיון לפרודקשן.',
+      heading: 'אז איך הקסם קורה?',
+      subline: '',
       steps: [
-        { num: '01', title: 'גילוי', desc: 'שיחה אחת. מבינים את הבעיה, הצוות, והמטרה. ואז מתחילים לבנות.' },
-        { num: '02', title: 'תכנון', desc: 'ארכיטקטורה, היקף, וציר זמן. לפני שנגענו בשורת קוד אחת.' },
-        { num: '03', title: 'בנייה', desc: 'פיתוח מהיר ושקוף. עדכונים שבועים, גישה ישירה לצוות, אפס הפתעות.' },
-        { num: '04', title: 'שחרור', desc: 'פריסה, בדיקות, ומסירה. מוודאים שהכל עובד לפני שסוגרים.' },
+        { num: '01', title: 'גילוי', desc: 'מאפיינים את הבעיה' },
+        { num: '02', title: 'תכנון', desc: 'מתכננים את הפתרון וקובעים מדדי הצלחה' },
+        { num: '03', title: 'בנייה', desc: 'בונים את הפתרון' },
+        { num: '04', title: 'שחרור', desc: 'הטמעה בעסק, ועמידה במדדי הצלחה' },
       ],
     },
     testimonials: {
       tag: '05 / לקוחות',
-      heading: 'מה אומרים עלינו',
+      heading: 'לקוחות מספרים',
       note: '',
       items: [
-        { name: 'דניאל לוי', role: 'מנכ״ל, חברת נדל״ן', quote: 'Elevize בנו לנו מערכת ניהול לידים תוך שבועיים. מה שלקח שעות של עבודה ידנית עכשיו קורה אוטומטית. החיסכון בזמן הוא עצום.' },
-        { name: 'מיכל כהן', role: 'מנהלת שיווק, סטארטאפ SaaS', quote: 'ביקשנו סוכן AI לתמיכת לקוחות. קיבלנו מערכת שפותרת 80% מהפניות לבד. הצוות שלנו סוף סוף יכול להתמקד בדברים שחשובים.' },
-        { name: 'רועי שמואלי', role: 'יזם, מסחר אלקטרוני', quote: 'הדשבורד שבנו חיבר לראשונה את כל הנתונים שלי: מלאי, הזמנות, תזמון, לתצוגה אחת. פשוט חסך לי עובד שלם.' },
+        { name: 'שירן כונסארי', role: 'בעלת סטודיו לעיצוב גרפי', quote: 'Elevize בנו לנו מערכת ניהול לידים תוך שבועיים. מה שלקח שעות של עבודה ידנית עכשיו קורה אוטומטית. החיסכון בזמן הוא עצום.' },
+        { name: 'מיכל שוורץ', role: 'מנהלת שיווק, סטארטאפ SaaS', quote: 'ביקשנו סוכן AI לתמיכת לקוחות. קיבלנו מערכת שפותרת 80% מהפניות לבד. הצוות שלנו סוף סוף יכול להתמקד בדברים שחשובים.' },
+        { name: 'אפי זיו', role: 'מנהל מפעל מזון', quote: 'המערכת שגיא ובועז בנו לי חוסכת לעובדת שלי מעל 30 שעות בחודש, חוסכת לי אלפי שקלים בחודש על אוכל שהיה נזרק לפח ועושה לעובדים שלי חיים בהרבה יותר קלים.' },
       ],
     },
     faq: {
@@ -177,23 +177,23 @@ export const translations = {
     },
     hero: {
       badge: 'Software Solutions',
-      headlineWords: ['Build', 'What', 'Others', "Can't."],
+      headlineWords: ['Your Partners for', 'Streamlining Workflows', 'with AI.'],
       subline:
-        'We turn ambitious ideas into production-grade reality. Custom automations, AI agents, and software built exactly to your needs.',
+        'It\'s time to turn operational challenges into competitive advantage. We build automations and AI agents that take your business to the next era.',
       subwords: ['Automations', '·', 'AI Agents', '·', 'Custom Software', '·', 'Anything'],
-      ctaStart: 'Start a Project',
-      ctaWork: 'View Our Work',
+      ctaStart: 'Free Consultation',
+      ctaWork: 'View Projects',
     },
     services: {
       tag: '01 / Services',
-      heading: 'What We Build',
+      heading: 'The Solutions That Get You There',
       subline:
-        "We don't do cookie-cutter. Every engagement starts with understanding your problem and ends with a solution that actually works.",
+        'We analyze your needs, develop custom solutions, and implement them in your business.',
       items: [
         {
           label: 'Custom Automations',
           description:
-            'End-to-end workflow automation that eliminates the manual. Zapier-level power with none of the limits, built specifically for your processes.',
+            'End-to-end workflow automation that eliminates the need for human touch. We build smart workflows tailored specifically to your needs and systems.',
         },
         {
           label: 'AI Agent Development',
@@ -203,19 +203,19 @@ export const translations = {
         {
           label: 'Custom Software',
           description:
-            'Full-stack applications built to your exact spec. Dashboards, internal tools, SaaS products, integrations - clean code, production-grade.',
+            'Full-stack applications built to your exact spec. Dashboards, internal tools, SaaS products, integrations.',
         },
         {
           label: 'Anything You Can Dream',
           description:
-            'If it can be built with software, we can build it. Bring your wildest idea and we will architect and ship it with the same precision as everything else.',
+            'Every business works differently, and sometimes existing tools just aren\'t enough. We build internal tools, complex integrations, and management systems from scratch, tailored exactly to your needs.',
         },
       ],
     },
     projects: {
       tag: '03 / Projects',
-      heading: "What We've Shipped",
-      subline: "A sample of what we've built. Every project is different. The quality never is.",
+      heading: 'Our Masterpieces',
+      subline: '',
       liveStatus: 'Live',
       nextStatus: 'Next?',
       items: [
@@ -243,10 +243,10 @@ export const translations = {
     },
     contact: {
       tag: '06 / Contact',
-      heading1: 'Ready to build',
-      heading2: 'something real?',
+      heading1: 'Want to hear more?',
+      heading2: '',
       subline:
-        "Tell us what you're working on. We'll respond within 24 hours with a straight answer. No fluff, no sales pitch.",
+        'Schedule a free consultation, tell us about the challenges in your business, and let\'s see how we can help.',
       chatLabel: 'Or chat directly',
       wa: 'WhatsApp Us',
       fields: {
@@ -257,7 +257,7 @@ export const translations = {
         message: 'What are you building?',
         messagePlaceholder: 'Describe your project or idea...',
       },
-      send: 'Send Message',
+      send: 'I Want a Free Consultation',
       sending: 'Sending...',
       successTitle: 'Message received',
       successSub: "We'll be in touch within 24 hours. Looking forward to it.",
@@ -272,34 +272,34 @@ export const translations = {
     },
     about: {
       tag: '04 / About',
-      heading: 'Developers who build things that work',
-      body: "We're a small team of software engineers and AI specialists. Not a consultancy, not a digital agency. Developers who prefer clean code over pretty slides.",
-      stat1Value: '5+',
+      heading: 'The Perfect Blend of Business Understanding and Code',
+      body: '',
+      stat1Value: '7+',
       stat1Label: 'Years Experience',
-      stat2Value: '20+',
+      stat2Value: '56',
       stat2Label: 'Projects Delivered',
-      stat3Value: '24h',
-      stat3Label: 'Response Time',
+      stat3Value: '100%',
+      stat3Label: 'Commitment to Your Business',
     },
     process: {
       tag: '02 / Process',
-      heading: 'How We Work',
-      subline: 'No bureaucracy, no surprises. Clear steps from idea to production.',
+      heading: 'So How Does the Magic Happen?',
+      subline: '',
       steps: [
-        { num: '01', title: 'Discover', desc: 'One conversation. We understand the problem, the team, and the goal. Then we start building.' },
-        { num: '02', title: 'Plan', desc: 'Architecture, scope, and timeline. Before we touch a single line of code.' },
-        { num: '03', title: 'Build', desc: 'Fast, transparent development. Weekly updates, direct access to the team, zero surprises.' },
-        { num: '04', title: 'Ship', desc: 'Deploy, test, and hand off. We make sure everything works before we close.' },
+        { num: '01', title: 'Discover', desc: 'Defining the problem' },
+        { num: '02', title: 'Plan', desc: 'Planning the solution and setting success metrics' },
+        { num: '03', title: 'Build', desc: 'Building the solution' },
+        { num: '04', title: 'Ship', desc: 'Implementation in your business and meeting success metrics' },
       ],
     },
     testimonials: {
       tag: '05 / Clients',
-      heading: 'What They Say',
+      heading: 'Clients Tell Their Story',
       note: '* Reviews translated from Hebrew',
       items: [
-        { name: 'Daniel Levi', role: 'CEO, Real Estate Firm', quote: 'Elevize built our lead management system in two weeks. What used to take hours of manual work now happens automatically. The time savings are enormous.' },
-        { name: 'Michal Cohen', role: 'Marketing Manager, SaaS Startup', quote: 'We asked for an AI customer support agent. We got a system that resolves 80% of requests on its own. Our team can finally focus on what actually matters.' },
-        { name: 'Roee Shmueli', role: 'Entrepreneur, E-commerce', quote: 'The dashboard they built connected all my data for the first time: inventory, orders, scheduling, all in one view. It basically replaced a full-time employee.' },
+        { name: 'Shiran Kunsari', role: 'Graphic Design Studio Owner', quote: 'Elevize built our lead management system in two weeks. What used to take hours of manual work now happens automatically. The time savings are enormous.' },
+        { name: 'Michal Schwartz', role: 'Marketing Manager, SaaS Startup', quote: 'We asked for an AI customer support agent. We got a system that resolves 80% of requests on its own. Our team can finally focus on what actually matters.' },
+        { name: 'Efi Ziv', role: 'Food Factory Manager', quote: 'The system Guy and Boaz built saves my employee over 30 hours a month, saves me thousands of shekels a month on food that would have been thrown away, and makes my employees\' lives much easier.' },
       ],
     },
     faq: {
@@ -334,23 +334,23 @@ export const translations = {
     },
     hero: {
       badge: 'Программные решения',
-      headlineWords: ['Строим', 'то,', 'что', 'другие не могут.'],
+      headlineWords: ['Ваши партнёры', 'по оптимизации процессов', 'с помощью AI.'],
       subline:
-        'Мы превращаем амбициозные идеи в продакшн-решения. Кастомные автоматизации, AI-агенты и ПО под ваши задачи.',
+        'Пора превратить операционные вызовы в конкурентное преимущество. Мы создаём автоматизации и AI-агентов, которые выведут ваш бизнес на новый уровень.',
       subwords: ['Автоматизации', '·', 'AI-агенты', '·', 'Кастомный софт', '·', 'Что угодно'],
-      ctaStart: 'Начать проект',
-      ctaWork: 'Наши работы',
+      ctaStart: 'Бесплатная консультация',
+      ctaWork: 'Смотреть проекты',
     },
     services: {
       tag: '01 / Услуги',
-      heading: 'Что мы строим',
+      heading: 'Решения, которые приведут вас к цели',
       subline:
-        'Мы не работаем по шаблону. Каждый проект начинается с понимания вашей задачи и заканчивается решением, которое реально работает.',
+        'Анализируем потребности, разрабатываем индивидуальные решения и внедряем их в ваш бизнес.',
       items: [
         {
           label: 'Кастомные автоматизации',
           description:
-            'Сквозная автоматизация рабочих процессов, устраняющая ручной труд. Мощность уровня Zapier без ограничений, созданная под ваши процессы.',
+            'Сквозная автоматизация рабочих процессов, устраняющая необходимость ручного вмешательства. Мы создаём умные рабочие потоки, скроенные под ваши потребности и системы.',
         },
         {
           label: 'Разработка AI-агентов',
@@ -360,19 +360,19 @@ export const translations = {
         {
           label: 'Кастомное ПО',
           description:
-            'Full-stack приложения по вашему точному ТЗ. Дашборды, внутренние инструменты, SaaS-продукты, интеграции. Чистый код, продакшн-уровень.',
+            'Full-stack приложения по вашему точному ТЗ. Дашборды, внутренние инструменты, SaaS-продукты, интеграции.',
         },
         {
           label: 'Что угодно',
           description:
-            'Если это можно сделать с помощью ПО, мы это сделаем. Приносите самую смелую идею, спроектируем и реализуем с той же точностью.',
+            'Каждый бизнес работает по-своему, и иногда существующих инструментов просто недостаточно. Разработка внутренних инструментов, сложных интеграций и систем управления с нуля, точно по вашим требованиям.',
         },
       ],
     },
     projects: {
       tag: '03 / Проекты',
-      heading: 'Что мы сделали',
-      subline: 'Примеры нашей работы. Каждый проект уникален. Качество неизменно.',
+      heading: 'Наши шедевры',
+      subline: '',
       liveStatus: 'Запущен',
       nextStatus: 'Далее?',
       items: [
@@ -400,10 +400,10 @@ export const translations = {
     },
     contact: {
       tag: '06 / Контакты',
-      heading1: 'Готовы создать',
-      heading2: 'что-то реальное?',
+      heading1: 'Хотите узнать больше?',
+      heading2: '',
       subline:
-        'Расскажите, над чем работаете. Ответим в течение 24 часов. Без воды и продажного питча.',
+        'Запишитесь на бесплатную консультацию, расскажите о проблемах в вашем бизнесе, и мы вместе найдём решение.',
       chatLabel: 'Или напишите напрямую',
       wa: 'Написать в WhatsApp',
       fields: {
@@ -414,7 +414,7 @@ export const translations = {
         message: 'Что вы строите?',
         messagePlaceholder: 'Опишите проект или идею...',
       },
-      send: 'Отправить',
+      send: 'Хочу бесплатную консультацию',
       sending: 'Отправка...',
       successTitle: 'Сообщение получено',
       successSub: 'Свяжемся с вами в течение 24 часов. Ждём с нетерпением.',
@@ -429,34 +429,34 @@ export const translations = {
     },
     about: {
       tag: '04 / О нас',
-      heading: 'Разработчики, которые создают то, что работает',
-      body: 'Мы небольшая команда инженеров и AI-специалистов. Не консалтинг, не агентство. Разработчики, которые предпочитают чистый код красивым презентациям.',
-      stat1Value: '5+',
+      heading: 'Идеальное сочетание бизнес-понимания и кода',
+      body: '',
+      stat1Value: '7+',
       stat1Label: 'Лет опыта',
-      stat2Value: '20+',
+      stat2Value: '56',
       stat2Label: 'Проектов сдано',
-      stat3Value: '24h',
-      stat3Label: 'Время ответа',
+      stat3Value: '100%',
+      stat3Label: 'Преданность вашему бизнесу',
     },
     process: {
       tag: '02 / Процесс',
-      heading: 'Как мы работаем',
-      subline: 'Без бюрократии, без сюрпризов. Чёткие шаги от идеи до продакшна.',
+      heading: 'Как происходит магия?',
+      subline: '',
       steps: [
-        { num: '01', title: 'Изучение', desc: 'Один звонок. Понимаем задачу, команду и цель. Потом начинаем строить.' },
-        { num: '02', title: 'Планирование', desc: 'Архитектура, объём и сроки. До того, как написана первая строка кода.' },
-        { num: '03', title: 'Разработка', desc: 'Быстрая и прозрачная разработка. Еженедельные обновления, прямой доступ к команде, ноль сюрпризов.' },
-        { num: '04', title: 'Запуск', desc: 'Деплой, тестирование и передача. Убеждаемся, что всё работает, прежде чем закрыть задачу.' },
+        { num: '01', title: 'Изучение', desc: 'Определяем проблему' },
+        { num: '02', title: 'Планирование', desc: 'Планируем решение и устанавливаем метрики успеха' },
+        { num: '03', title: 'Разработка', desc: 'Создаём решение' },
+        { num: '04', title: 'Запуск', desc: 'Внедрение в бизнес и достижение метрик успеха' },
       ],
     },
     testimonials: {
       tag: '05 / Клиенты',
-      heading: 'Отзывы клиентов',
+      heading: 'Клиенты рассказывают',
       note: '* Отзывы переведены с иврита',
       items: [
-        { name: 'Даниэль Леви', role: 'CEO, риэлторская компания', quote: 'Elevize построили нашу систему управления лидами за две недели. То, что занимало часы ручной работы, теперь происходит автоматически. Экономия времени огромная.' },
-        { name: 'Михаль Коэн', role: 'Директор по маркетингу, SaaS-стартап', quote: 'Мы попросили AI-агента для поддержки клиентов. Получили систему, которая решает 80% обращений самостоятельно. Наша команда наконец может сосредоточиться на важном.' },
-        { name: 'Рои Шмуэли', role: 'Предприниматель, e-commerce', quote: 'Дашборд, который они построили, впервые объединил все мои данные в одном окне: склад, заказы, расписание. Он просто заменил одного сотрудника.' },
+        { name: 'Ширан Кунсари', role: 'Владелица студии графического дизайна', quote: 'Elevize построили нашу систему управления лидами за две недели. То, что занимало часы ручной работы, теперь происходит автоматически. Экономия времени огромная.' },
+        { name: 'Михаль Шварц', role: 'Директор по маркетингу, SaaS-стартап', quote: 'Мы попросили AI-агента для поддержки клиентов. Получили систему, которая решает 80% обращений самостоятельно. Наша команда наконец может сосредоточиться на важном.' },
+        { name: 'Эфи Зив', role: 'Управляющий пищевым производством', quote: 'Система, которую Гай и Боаз построили, экономит моей сотруднице более 30 часов в месяц, экономит мне тысячи шекелей в месяц на еде, которая выбрасывалась, и значительно облегчает жизнь моим работникам.' },
       ],
     },
     faq: {

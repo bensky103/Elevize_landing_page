@@ -1,0 +1,11 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(claude whoami:*)",
+      "Bash(claude config:*)",
+      "Bash(claude --version)",
+      "Bash(python3 -c \"import json,sys; d=json.load\\(sys.stdin\\); print\\(d.get\\(''''email''''\\) or d.get\\(''''account''''\\) or list\\(d.keys\\(\\)\\)\\)\")",
+      "Bash(python3 -c \"import json,sys; d=json.load\\(sys.stdin\\); oauth=d.get\\(''''claudeAiOauth'''',{}\\); print\\(''''token type:'''', oauth.get\\(''''token_type''''\\)\\); print\\(''''expires:'''', oauth.get\\(''''expires_at''''\\)\\); print\\(''''org:'''', d.get\\(''''organizationUuid''''\\)\\)\")"
+    ]
+  }
+}

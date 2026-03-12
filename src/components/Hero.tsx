@@ -60,7 +60,7 @@ export default function Hero() {
           className="font-black tracking-tight"
           style={{
             fontFamily: 'var(--font-display)',
-            fontSize: 'clamp(2.8rem, 8.5vw, 6.5rem)',
+            fontSize: 'clamp(2rem, 5.5vw, 4.2rem)',
             lineHeight: 1.05,
           }}
         >
@@ -134,7 +134,7 @@ export default function Hero() {
           transition={{ delay: 1.5, duration: 0.45, ease: [0.16, 1, 0.3, 1] }}
           className="flex flex-col sm:flex-row items-center gap-3 mt-2"
         >
-          <GlowButton href="#contact" label={t.hero.ctaStart} arrow={t.arrow} />
+          <GlowButton href="#contact" label={t.hero.ctaStart} />
           <a
             href="#projects"
             className="px-6 py-3 rounded-full text-sm font-medium transition-all duration-300"
@@ -171,7 +171,7 @@ export default function Hero() {
   )
 }
 
-function GlowButton({ href, label, arrow }: { href: string; label: string; arrow: string }) {
+function GlowButton({ href, label }: { href: string; label: string }) {
   return (
     <a
       href={href}
@@ -199,7 +199,7 @@ function GlowButton({ href, label, arrow }: { href: string; label: string; arrow
           background: 'linear-gradient(105deg, transparent 40%, rgba(255,255,255,0.15) 50%, transparent 60%)',
         }}
       />
-      {label} {arrow}
+      {label}
     </a>
   )
 }

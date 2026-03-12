@@ -14,7 +14,7 @@ export default function About() {
   const xRight = dir === 'rtl' ? -24 : 24
 
   return (
-    <section id="about" className="section-padding relative">
+    <section id="about" className="section-padding relative" style={{ paddingTop: '3rem', paddingBottom: '3rem' }}>
       {/* Ambient glow */}
       <div
         className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[300px] pointer-events-none"
@@ -26,7 +26,7 @@ export default function About() {
       />
 
       <div className="site-container">
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-14 md:gap-20 items-center">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 items-center">
 
           {/* Left — text */}
           <motion.div
@@ -48,12 +48,14 @@ export default function About() {
             >
               {t.about.heading}
             </h2>
-            <p
-              className="text-base leading-relaxed"
-              style={{ color: 'var(--muted)', fontWeight: 300, maxWidth: '460px' }}
-            >
-              {t.about.body}
-            </p>
+            {t.about.body && (
+              <p
+                className="text-base leading-relaxed"
+                style={{ color: 'var(--muted)', fontWeight: 300, maxWidth: '460px' }}
+              >
+                {t.about.body}
+              </p>
+            )}
           </motion.div>
 
           {/* Right — stats grid */}
